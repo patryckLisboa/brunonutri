@@ -12,4 +12,14 @@
     width: 100%;
     transition: none;
     margin-top: 75vh;
+    z-index: 2;
+}
+
+.navigation-fixed {
+  position: fixed;
+  width: 100%;
+  transition: none;
+  background-color: black;
+  z-index: 3;
+  top: -30px;
 }

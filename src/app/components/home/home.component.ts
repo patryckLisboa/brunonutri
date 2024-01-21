@@ -6,22 +6,12 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  altura = 0; // Ajuste a altura limite conforme necessário
-
-  @HostListener('window:scroll', ['$event'])
-  onScroll(): void {
-    this.altura = window.scrollY || document.documentElement.scrollTop;
-  }
+  scrollY = 0; // Ajuste a altura limite conforme necessário
 
   getNavigationClass() {
+    this.scrollY = scrollY
     if (scrollY >= 743) {
-      return {
-        position: 'absolute',
-        width: '100%',
-        transition: "none",
-        marginTop: `${this.altura - 25}px`,
-        backgroundColor: 'black'
-      };
+      return "navigation-fixed"
     }
     return "navigation";
   }
