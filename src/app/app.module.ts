@@ -11,6 +11,7 @@ import { PNavigationComponent } from './shared/components/p-navigation/p-navigat
 import { EvolutionsComponent } from './components/home/evolutions/evolutions.component';
 import { InformationComponent } from './components/home/information/information.component';
 import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.component';
+import { MaterializeModule } from 'ngx-materialize';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.co
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterializeModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
