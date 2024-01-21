@@ -1,0 +1,94 @@
+<div class="background-overlay"></div>
+<div class="logo-container" >
+  <p  #logo (click)="elasticEffect(logo)">Team Corrêa ©</p>
+</div>
+<!-- <div class="shadow-container">
+  <div [ngStyle]="getNavBarStyle('L')"></div>
+  <div>
+    <div class="nav-button-local"></div>
+  </div>
+  <div [ngStyle]="getNavBarStyle('R')"></div>
+</div> -->
+<div class="speech-bubble-container" >
+  <div class="speech-bubble"  #speechBubble (click)="elasticEffect(speechBubble)">
+    <p class="speech-bubble-text">
+      Já imaginou alcançar seus objetivos sem abrir mão de comer o que gosta?
+    </p>
+  </div>
+</div>
+<div class="rows presentation-panel">
+  <div class="floating-text">
+    <h2>
+      Descubra como um acompanhamento
+      <span class="highlight-color"> individualizado e adaptado</span> para seus
+      objetivos pode te
+      <span class="highlight-color">levar ao físico que sempre sonhou</span>
+    </h2>
+    <div>
+      <p>
+        Transforme seu corpo de maneira saudável por meio de estratégias
+        nutricionais e de treinamento embasadas em evidências científicas
+      </p>
+      <button
+        class="button"
+        #buttonFloating
+        (click)="openWhatsApp(buttonFloating)"
+        target="_blank"
+      >
+        <p>Saiba Mais <i class="fas fa-angle-double-right"></i></p>
+      </button>
+    </div>
+  </div>
+  <div class="img-presentation">
+    <!-- <div class="glass-box-container">
+      <div class="glass-box" #glassBoxRef (click)="elasticEffect(glassBoxRef)">
+        <h3>Alunos</h3>
+        <h2>
+          +1500 <i class="fas fa-users"> </i>
+          <p>atendidos</p>
+        </h2>
+        <button
+          (click)="openWhatsApp(glassBoxRef)"
+          target="_blank"  
+          class="transparent-button"
+        >
+          <p>Team Corrêa</p>
+        </button>
+      </div>
+    </div> -->
+    <div class="image-container">
+      <img
+        class="img-entrada"
+        src="../../../../assets/img/img-sem-fundo.png"
+        alt="Descrição da imagem"
+      />
+      <div class="circle-container">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="black-panel">
+  <div class="floating-mobile-text">
+    <h2>
+      Descubra como um acompanhamento
+      <span class="highlight-color"> individualizado e adaptado</span> para seus
+      objetivos pode te
+      <span class="highlight-color">levar ao físico que sempre sonhou</span>
+    </h2>
+    <div>
+      <p>
+        Transforme seu corpo de maneira saudável por meio de estratégias
+        nutricionais e de treinamento embasadas em evidências científicas
+      </p>
+      <button
+        class="button"
+        #mobileButtonFloating
+        (click)="openWhatsApp(mobileButtonFloating)"
+        target="_blank"
+      >
+        <p>Saiba Mais <i class="fas fa-angle-double-right"></i></p>
+      </button>
+    </div>
+  </div>
+</div>

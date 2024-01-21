@@ -1,0 +1,314 @@
+.background-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, black 20%, #18381a 90%);
+  z-index: -1;
+}
+
+// .shadow-container{
+//   position: absolute;
+//   width: 100%;
+//   height: 83.2vh;
+//   display: flex;
+//   align-items: end;
+//   overflow: hidden;
+// }
+
+// .nav-button-local{
+//   width: 70px;
+// }
+// /* Adiciona um filtro de sobreposição */
+// .background-overlay::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.7); /* Ajuste a opacidade conforme necessário */
+//   z-index: 1; /* Coloca o filtro sobre a imagem */
+// }
+
+.image-container {
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  right: 0px;
+  bottom: 18vh;
+}
+
+.image-container img {
+  height: 72vh;
+  left: 25px;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  height: 70vh;
+  width: 80vh;
+  border-radius: 50%;
+  top: 22vh;
+  left: 0; /* Inicialmente fora da tela à direita */
+  z-index: -1;
+  background-color: #4caf4fa6;
+  animation: balanco 3s ease-in-out infinite;
+}
+
+.circle-container {
+  position: absolute;
+  animation: entrada 1s ease-out forwards;
+}
+
+.presentation-panel {
+  height: 83vh;
+  padding: 0px 30px;
+  align-items: center;
+}
+
+.floating-text {
+  position: relative;
+  width: 40vw;
+  border-radius: 10px;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.floating-mobile-text {
+  position: relative;
+  padding: 15px;
+  text-align: center;
+  display: none;
+}
+
+.black-panel {
+  height: 350px;
+  position: absolute;
+  padding-top: 70px;
+  background-color: black;
+  display: none;
+  z-index: 1;
+}
+
+.highlight-color {
+  color: #4caf50; /* Cor de destaque no tema de saúde e nutrição */
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2); /* Adicionando uma sombra mais pronunciada */
+  text-align: center;
+  transition: transform 0.3s ease-out;
+  display: inline-block;
+  min-width: 140px;
+  line-height: 0.9;
+}
+
+.glass-box-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30vh;
+  animation: elasticMotion 1.5s ease-out;
+}
+
+.img-presentation {
+  display: flex;
+  height: 100%;
+  width: 50vw;
+}
+
+.clicked-elastic {
+  animation: elasticMotion 1s ease-out;
+}
+
+.transparent-button {
+  display: inline-block;
+  background: rgba(
+    169,
+    169,
+    169,
+    1
+  ); /* Cor do botão cinza menos transparente */
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.transparent-button:hover {
+  background: rgba(
+    169,
+    169,
+    169,
+    1
+  ); /* Cor do botão cinza menos transparente no hover */
+}
+
+.button {
+  display: inline-block;
+  background-color: #4caf50; /* Cor do botão seguindo o tema */
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #367c3d; /* Cor mais escura no hover */
+}
+
+.rows {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.responsive {
+  width: 99%;
+}
+
+h2 {
+  color: #fff; /* Cor de texto para informações adicionais */
+}
+
+.img-entrada {
+  animation: entradaDaImagem 1s ease-out; /* Ajuste a duração conforme necessário */
+}
+
+.speech-bubble {
+  width: 128px;
+  background: linear-gradient(to top, #17381971  20%, #62836571 90%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 1px solid #ffffff85; /* Adiciona uma borda de 1px com cor #ffffff85 */
+  padding: 10px;
+}
+
+
+.speech-bubble-container {
+  position: absolute;
+  top: 18vh;
+  right: 28vw;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.speech-bubble-text {
+  margin: 0;
+  color: #ffffffc4;
+}
+
+@media (max-width: 600px) {
+  .floating-text {
+    display: none;
+  }
+  .floating-mobile-text {
+    display: block;
+  }
+  .glass-box-container {
+    animation: floatAnimation 3s ease-in-out infinite;
+  }
+  .image-container {
+    padding-right: -30px;
+  }
+  .img-presentation {
+    justify-content: center;
+  }
+  .black-panel{
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .speech-bubble-container {
+    right: 35vw;
+  }
+  @media (max-width: 600px) {
+    .speech-bubble-container {
+      right: 65vw;
+      top: 18vh;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .image-container {
+    width: 45vw;
+    justify-content: center;
+  }
+  .image-container img {
+    height: 85vh;
+  }
+  .circle {
+    left: -30vw;
+  }
+  .circle-container {
+    position: relative;
+  }
+}
+
+@keyframes elasticMotion {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(2px) scaleY(1.1);
+  }
+  30% {
+    transform: translateX(-2px) scaleY(0.9);
+  }
+  50% {
+    transform: translateX(1px) scaleY(1.05);
+  }
+  70% {
+    transform: translateX(-1px) scaleY(0.95);
+  }
+  90% {
+    transform: translateX(0.5px) scaleY(1);
+  }
+}
+
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes entradaDaImagem {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes balanco {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes entrada {
+  0% {
+    left: 100%; /* Fora da tela à direita */
+  }
+  100% {
+    left: 0; /* Chegando à posição original */
+  }
+}

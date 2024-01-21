@@ -1,0 +1,78 @@
+<div class="body">
+  <div class="shadow-container">
+    <div [ngStyle]="getNavBarStyle('L')"></div>
+    <div>
+      <div class="nav-button-local"></div>
+    </div>
+    <div [ngStyle]="getNavBarStyle('R')"></div>
+  </div>
+  <div class="navigation">
+    <ul>
+      <li
+        class="list"
+        [class.active]="currentIndex === 0"
+        (click)="setActive(0)"
+      >
+        <a>
+          <span class="icon"
+            ><mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="person"
+            ></mat-icon>
+          </span>
+          <p class="text">Início</p>
+        </a>
+      </li>
+      <li
+        class="list"
+        [class.active]="currentIndex === 1"
+        (click)="setActive(1)"
+      >
+        <a>
+          <span class="icon"
+            ><mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="trending_up"
+            ></mat-icon
+          ></span>
+          <p class="text">Evoluções</p>
+        </a>
+      </li>
+      <li
+        class="list"
+        [class.active]="currentIndex === 2"
+        (click)="setActive(2)"
+      >
+        <a>
+          <span class="icon"
+            ><mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="sms"
+            ></mat-icon
+          ></span>
+          <p class="text">Como Funciona</p>
+        </a>
+      </li>
+      <li
+        class="list"
+        [class.active]="currentIndex === 3"
+        (click)="setActive(3)"
+      >
+        <a>
+          <span class="icon"
+            ><mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="attach_money"
+            ></mat-icon
+          ></span>
+          <p class="text">Planos</p>
+        </a>
+      </li>
+      <div class="indicator"></div>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.navigation-aux {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  transition: none;
+  z-index: 2;
+}
+
+.navigation {
+    position: absolute;
+    width: 100%;
+    transition: none;
+    margin-top: 75vh;
+}

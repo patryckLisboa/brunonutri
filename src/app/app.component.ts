@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'brunonutri';
+  constructor(private cdr: ChangeDetectorRef) { }
+  
+  redrawScreen() {
+    this.cdr.detectChanges();
+    setTimeout(() => this.redrawScreen(), 1000); // Chama novamente após 1 segundo
+  }
+
+  ngOnInit() {
+    this.redrawScreen();
+  }
 }
