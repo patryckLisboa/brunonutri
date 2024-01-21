@@ -1,5 +1,4 @@
-import { Component, NgZone } from '@angular/core';
-declare const jQuery: any;
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-evolutions',
@@ -122,16 +121,8 @@ export class EvolutionsComponent {
     },
   ];
 
-  constructor(private zone: NgZone) {}
 
   ngAfterViewInit(): void {
-    this.zone.runOutsideAngular(() => {
-      document.addEventListener('DOMContentLoaded', () => {
-        this.inicializarCarousel();
-      });
-    });
-
-    this.verificarElementoAtivo();
   }
 
   getImgDescription(): string {
@@ -146,12 +137,4 @@ export class EvolutionsComponent {
     return '';
   }
 
-  private inicializarCarousel(): void {
-    const carousel = jQuery('.carousel');
-    if (carousel) {
-      carousel.carousel();
-    }
-  }
-
-  verificarElementoAtivo(): void {}
 }
