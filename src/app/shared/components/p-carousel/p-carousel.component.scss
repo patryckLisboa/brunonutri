@@ -44,6 +44,14 @@
     overflow: hidden;
     box-shadow: 0 0 25px rgba(76, 175, 80, 0.8);
     height: 250px;
+    opacity: 10%;
+    transition: 1s;
+  }
+  .swiper-slide-visible {
+    opacity: 70% ;
+  }
+  .swiper-slide-active{
+    opacity: 1 ;
   }
   .swiper-slide img {
     display: block;
