@@ -10,6 +10,7 @@ import { PNavigationComponent } from './shared/components/p-navigation/p-navigat
 import { EvolutionsComponent } from './components/home/evolutions/evolutions.component';
 import { InformationComponent } from './components/home/information/information.component';
 import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
