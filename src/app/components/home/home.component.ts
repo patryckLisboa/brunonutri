@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   scrollY = 0; // Ajuste a altura limite conforme necessário
 
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    this.scrollY = window.scrollY;
+  }
+
   getNavigationClass() {
-    this.scrollY = scrollY
-    if (scrollY >= 743) {
+     
+    if (this.scrollY >= 743) {
       return "navigation-fixed"
     }
     return "navigation";
