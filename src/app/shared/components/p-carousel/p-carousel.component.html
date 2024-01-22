@@ -1,22 +1,27 @@
+
 <div class="slider-effectCoverflow">
+  <div class="img-description">
+    <h1>{{ getImgDescription() }}</h1>
+  </div>
   <swiper
     [effect]="'coverflow'"
     [grabCursor]="true"
     [centeredSlides]="true"
     [slidesPerView]="'auto'"
     [coverflowEffect]="{
-      rotate: 50,
+      rotate: 30,
       stretch: 0,
-      depth: 100,
+      depth: 300,
       modifier: 1,
       slideShadows: true
     }"
     [pagination]="true"
     [navigation]="true"
+    [initialSlide]="1"
     class="mySwiper"
-    #carousel
+    (slideChange)="onSlideChange($event)"
   >
-    <ng-template swiperSlide  *ngFor="let imagem of imagens">
+    <ng-template swiperSlide  *ngFor="let imagem of imagens"  class="carousel-item" (click)="imgIndex = imagem.index">
       <img [src]="imagem.src" />
     </ng-template>
   </swiper>

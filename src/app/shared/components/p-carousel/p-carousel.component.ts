@@ -3,15 +3,18 @@ import Swiper from 'swiper';
 import { PaginationOptions } from 'swiper/types/modules/pagination';
 import { SwiperOptions } from 'swiper/types/swiper-options';
 import SwiperCore, { Navigation, Pagination, EffectCoverflow } from 'swiper';
+import { SwiperComponent } from 'swiper/angular';
 SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 
 @Component({
   selector: 'app-p-carousel',
   templateUrl: './p-carousel.component.html',
   styleUrls: ['./p-carousel.component.scss'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class PCarouselComponent {
+  imgIndex = 1;
+
   ngAfterViewInit() {}
 
   imagens = [
@@ -123,7 +126,15 @@ export class PCarouselComponent {
     {
       index: 22,
       src: '../../../../assets/img/img-evolutions/img (22).jpeg',
-      description: '8 ano',
+      description: '1 ano',
     },
   ];
+
+  getImgDescription(): string {
+    return this.imagens[this.imgIndex].description;
+  }
+
+  onSlideChange(event: any) {
+    this.imgIndex =  event[0].activeIndex ;
+  }
 }
