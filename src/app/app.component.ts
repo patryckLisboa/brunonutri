@@ -12,7 +12,7 @@ export class AppComponent {
   
   redrawScreen() {
     this.cdr.detectChanges();
-    setTimeout(() => this.redrawScreen(), 1000); // Chama novamente após 1 segundo
+    setTimeout(() => this.redrawScreen(), 500); // Chama novamente após 1 segundo
   }
 
   ngOnInit() {

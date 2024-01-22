@@ -9,9 +9,11 @@
   width: 100%;
   position: absolute;
   z-index: 3;
+  user-select: none;
 }
 
 .navigation {
+  user-select: none;
   position: relative;
   width: 400px;
   height: 85px;
@@ -57,7 +59,7 @@
   line-height: 68px;
   text-align: center;
   transition: 0.5s;
-  color: var(clr);
+  color: white;
 }
 
 .navigation ul li.active a .icon {
