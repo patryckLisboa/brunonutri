@@ -18,10 +18,9 @@
 }
 
 .expanded-image {
-  max-width: 99%; /* Ajuste conforme necessário */
+  max-width: 99%; 
 }
 
-/* Adicione estilos para esconder a imagem expandida inicialmente */
 .expanded-image-container {
   display: flex;
   justify-content: center;
@@ -30,7 +29,6 @@
 .carousel-item img:hover {
   cursor: pointer;
 }
-
 
 .img-description {
   animation: floatAnimation 3s ease-in-out infinite;
