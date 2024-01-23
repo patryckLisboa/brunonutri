@@ -14,6 +14,13 @@ SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 })
 export class PCarouselComponent {
   imgIndex = 1;
+  coverFlowEffect = {
+    rotate: 30,
+    stretch: 0,
+    depth: window.innerWidth < 750 ? 300 : 0,
+    modifier: 1,
+    slideShadows: true
+  }
 
   ngAfterViewInit() {}
 
@@ -126,7 +133,7 @@ export class PCarouselComponent {
     {
       index: 22,
       src: '../../../../assets/img/img-evolutions/img (22).jpeg',
-      description: '1 ano',
+      description: '8 meses',
     },
   ];
 

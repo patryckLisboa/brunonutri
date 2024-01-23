@@ -1,21 +1,13 @@
-.body {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
+.evolution {
+  background-color: black;
+  padding-top: 80px;
 }
-
-.evolutions{
-  height: 850px;
-}
-
 
 @media (max-width: 750px) {
-
-  .text-mobile-gap{
-    height: 450px;
-  }
+  .evolution {
+    padding: 40px 0px;
+    background-color: transparent;
+  }  
 }
 
 

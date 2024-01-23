@@ -30,7 +30,6 @@
 .slider-effectCoverflow {
   width: 100%;
   height: 450px;
-  margin-top: 30px;
   text-align: -webkit-center;
   .swiper {
     width: 100%;
@@ -40,11 +39,11 @@
   .swiper-slide {
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 300px;
     display: flex;
     overflow: hidden;
     box-shadow: 0 0 25px rgba(76, 175, 80, 0.8);
-    height: 250px;
+    height: 300px;
     opacity: 10%;
     transition: 1s;
   }
@@ -78,5 +77,12 @@
   .swiper-button-prev:after {
     font-size: 15px;
     font-weight: bold;
+  }
+}
+
+@media (max-width: 750px) {
+  .swiper-slide {
+    width: 250px;
+    height: 250px;
   }
 }
