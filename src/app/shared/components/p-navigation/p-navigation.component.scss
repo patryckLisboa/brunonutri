@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .body {
@@ -9,11 +10,9 @@
   width: 100%;
   position: absolute;
   z-index: 3;
-  user-select: none;
 }
 
 .navigation {
-  user-select: none;
   position: relative;
   width: 400px;
   height: 85px;

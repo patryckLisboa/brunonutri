@@ -36,21 +36,21 @@
   display: flex;
   overflow: hidden;
   right: 0px;
-  bottom: 18vh;
+  bottom: 170px;
 }
 
 .image-container img {
-  height: 72vh;
+  height: 650px;
   left: 25px;
   position: relative;
 }
 
 .circle {
   position: absolute;
-  height: 70vh;
-  width: 80vh;
+  height: 700px;
+  width: 600px;
   border-radius: 50%;
-  top: 22vh;
+  top: 200px;
   left: 0; /* Inicialmente fora da tela à direita */
   z-index: -1;
   background-color: #4caf4fa6;
@@ -63,7 +63,7 @@
 }
 
 .presentation-panel {
-  height: 83vh;
+  height: 800px;
   padding: 0px 30px;
   align-items: center;
 }
@@ -110,7 +110,7 @@
 .glass-box-container {
   display: flex;
   align-items: center;
-  margin-bottom: 30vh;
+  margin-bottom: 300px;
   animation: elasticMotion 1.5s ease-out;
 }
 
@@ -192,7 +192,7 @@ h2 {
 
 .speech-bubble-container {
   position: absolute;
-  top: 18vh;
+  top: 180px;
   right: 28vw;
   animation: floatAnimation 3s ease-in-out infinite;
 }
@@ -230,7 +230,7 @@ h2 {
   @media (max-width: 600px) {
     .speech-bubble-container {
       right: 65vw;
-      top: 18vh;
+      top: 180px;
     }
   }
 }
@@ -241,7 +241,7 @@ h2 {
     justify-content: center;
   }
   .image-container img {
-    height: 85vh;
+    height: 850px;
   }
   .circle {
     left: -30vw;
