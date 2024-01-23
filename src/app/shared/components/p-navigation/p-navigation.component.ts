@@ -15,8 +15,8 @@ export class PNavigationComponent {
   }
 
   getNavBarStyle(side: string) {
-    const initNumber = window.innerWidth < 600 ? 120 : 160;
-    const widthButton = window.innerWidth < 600 ? 80 : 107;
+    const initNumber = window.innerWidth < 750 ? 120 : 160;
+    const widthButton = window.innerWidth < 750 ? 80 : 107;
     if (side == 'L') {
       if (!this.currentIndex) {
         return {

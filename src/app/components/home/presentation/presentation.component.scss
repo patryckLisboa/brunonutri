@@ -6,146 +6,69 @@
   z-index: -1;
 }
 
-// .shadow-container{
-//   position: absolute;
-//   width: 100%;
-//   height: 83.2vh;
-//   display: flex;
-//   align-items: end;
-//   overflow: hidden;
-// }
-
-// .nav-button-local{
-//   width: 70px;
-// }
-// /* Adiciona um filtro de sobreposição */
-// .background-overlay::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.7); /* Ajuste a opacidade conforme necessário */
-//   z-index: 1; /* Coloca o filtro sobre a imagem */
-// }
-
 .image-container {
   z-index: -1;
-  position: absolute;
+  position: relative;
+  height: 100%;
+  align-items: flex-end;
   display: flex;
-  overflow: hidden;
-  right: 0px;
-  bottom: 170px;
+  justify-content: center;
+  width: 100%;
 }
 
 .image-container img {
   height: 650px;
-  left: 25px;
-  position: relative;
 }
 
 .circle {
-  position: absolute;
   height: 700px;
   width: 600px;
   border-radius: 50%;
-  top: 200px;
-  left: 0; /* Inicialmente fora da tela à direita */
-  z-index: -1;
+  top: 180px;
+  position: relative;
   background-color: #4caf4fa6;
   animation: balanco 3s ease-in-out infinite;
 }
 
 .circle-container {
   position: absolute;
+  z-index: -1;
+  width: 100%;
+  text-align: -webkit-center;
   animation: entrada 1s ease-out forwards;
 }
 
 .presentation-panel {
-  height: 800px;
-  padding: 0px 30px;
-  align-items: center;
+  height: 700px;
+  overflow: hidden;
 }
 
-.floating-text {
-  position: relative;
-  width: 40vw;
+.floating-text-container {
+  width: 100%;
   border-radius: 10px;
   animation: floatAnimation 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+}
+.floating-text {
+  width: 80%;
 }
 
 .floating-mobile-text {
   position: relative;
   padding: 15px;
   text-align: center;
-  display: none;
-}
-
-.black-panel {
-  height: 350px;
-  position: absolute;
-  padding-top: 70px;
   background-color: black;
   display: none;
-  z-index: 1;
+  padding-top: 70px;
 }
 
 .highlight-color {
   color: #4caf50; /* Cor de destaque no tema de saúde e nutrição */
 }
 
-.glass-box {
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2); /* Adicionando uma sombra mais pronunciada */
-  text-align: center;
-  transition: transform 0.3s ease-out;
-  display: inline-block;
-  min-width: 140px;
-  line-height: 0.9;
-}
-
-.glass-box-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 300px;
-  animation: elasticMotion 1.5s ease-out;
-}
-
-.img-presentation {
-  display: flex;
-  height: 100%;
-  width: 50vw;
-}
-
 .clicked-elastic {
   animation: elasticMotion 1s ease-out;
-}
-
-.transparent-button {
-  display: inline-block;
-  background: rgba(
-    169,
-    169,
-    169,
-    1
-  ); /* Cor do botão cinza menos transparente */
-  text-decoration: none;
-  border: none;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.transparent-button:hover {
-  background: rgba(
-    169,
-    169,
-    169,
-    1
-  ); /* Cor do botão cinza menos transparente no hover */
 }
 
 .button {
@@ -168,86 +91,42 @@
   align-items: center;
 }
 
-.responsive {
-  width: 99%;
-}
-
-h2 {
-  color: #fff; /* Cor de texto para informações adicionais */
-}
-
 .img-entrada {
   animation: entradaDaImagem 1s ease-out; /* Ajuste a duração conforme necessário */
 }
 
 .speech-bubble {
-  width: 128px;
-  background: linear-gradient(to top, #17381971  20%, #62836571 90%);
+  width: 109px;
+  background: linear-gradient(to top, #17381971 20%, #62836571 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   border: 1px solid #ffffff85; /* Adiciona uma borda de 1px com cor #ffffff85 */
   padding: 10px;
 }
 
+.speech-bubble p {
+  margin: 0px;
+}
 
 .speech-bubble-container {
   position: absolute;
-  top: 180px;
-  right: 28vw;
+  top: 130px;
+  left: 0;
   animation: floatAnimation 3s ease-in-out infinite;
 }
 
-.speech-bubble-text {
-  margin: 0;
-  color: #ffffffc4;
-}
-
-@media (max-width: 600px) {
-  .floating-text {
+@media (max-width: 750px) {
+  .floating-text-container {
     display: none;
   }
   .floating-mobile-text {
     display: block;
   }
-  .glass-box-container {
-    animation: floatAnimation 3s ease-in-out infinite;
-  }
-  .image-container {
-    padding-right: -30px;
-  }
-  .img-presentation {
-    justify-content: center;
-  }
-  .black-panel{
+  .black-panel {
     display: block;
   }
-}
-
-@media (max-width: 800px) {
   .speech-bubble-container {
-    right: 35vw;
-  }
-  @media (max-width: 600px) {
-    .speech-bubble-container {
-      right: 65vw;
-      top: 180px;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .image-container {
-    width: 45vw;
-    justify-content: center;
-  }
-  .image-container img {
-    height: 850px;
-  }
-  .circle {
-    left: -30vw;
-  }
-  .circle-container {
-    position: relative;
+    left: 10%;
   }
 }
 
