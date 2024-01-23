@@ -29,10 +29,8 @@ export class PCarouselComponent {
   }
 
   toggleImageModal(index: any = null): any {
-    index = index++;
-    console.log( this.imagens[index])
-    this.imgModalIndex = index;
-    if(index){
+    if(index || index == 0){
+      this.imgModalIndex = index;
       return this.imagens[index].expanded = true;
     }
     this.imagens[this.imgModalIndex].expanded = false;

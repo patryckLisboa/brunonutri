@@ -28,7 +28,6 @@ export class PNavigationComponent {
         };
       }
       const number = initNumber - widthButton * this.currentIndex;
-      // console.log(`-${number}px`.replaceAll("--","+"));
       if (this.currentIndex < 2)
         return {
           backgroundColor: 'black',
