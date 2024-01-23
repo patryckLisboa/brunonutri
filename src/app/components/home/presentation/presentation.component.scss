@@ -96,16 +96,13 @@
 }
 
 .speech-bubble {
-  width: 109px;
+  width: 105px;
   background: linear-gradient(to top, #17381971 20%, #62836571 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   border: 1px solid #ffffff85; /* Adiciona uma borda de 1px com cor #ffffff85 */
   padding: 10px;
-}
-
-.speech-bubble p {
-  margin: 0px;
+  font-size: 13px;
 }
 
 .speech-bubble-container {
