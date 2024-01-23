@@ -14,6 +14,7 @@ SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 })
 export class PCarouselComponent {
   imgIndex = 1;
+  loadingPage = true;
   coverFlowEffect = {
     rotate: 30,
     stretch: 0,
@@ -22,7 +23,9 @@ export class PCarouselComponent {
     slideShadows: true
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    setTimeout(() =>  this.loadingPage = false, 0);
+  }
 
   imagens = [
     {
@@ -138,7 +141,7 @@ export class PCarouselComponent {
   ];
 
   getImgDescription(): string {
-    return this.imagens[this.imgIndex].description;
+    return this.loadingPage ? '' : this.imagens[this.imgIndex].description;
   }
 
   onSlideChange(event: any) {
