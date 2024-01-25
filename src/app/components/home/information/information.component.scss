@@ -31,12 +31,14 @@
   .neon {
     z-index: 1;
     position: relative;
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    border: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral esquerda */
+    border-left: none; /* Adiciona uma borda na lateral esquerda */
+    border-right: none; /* Adiciona uma borda na lateral esquerda */
     min-height: 100px;
     padding: 5px 15px;
     display: flex;
     align-items: center;
-    background: linear-gradient(to top, rgba(0, 94, 6, 0.322) 20%, #f7f7f74f 90%);
+    background: linear-gradient(to top, rgba(2, 150, 12, 0.144)  10%, transparent 90%);
   }
   
   .neon div {
@@ -56,20 +58,31 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
   .title h1{
-    text-align: center;
     font-size: 50px;
     font-weight: 500;
-    color: white
   }
-  
-  p {
+
+  .green-line{
+    height: 75px;
+    width: 390px;
+    position: absolute;
+    place-self: center;
+    margin-bottom: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral esquerda */
+    border-right: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral direita */
+    border-bottom: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral direita */
+  } 
+
+  .neon div p {
     z-index: 1;
     margin-left: 10px;
     margin-bottom: 0px;
     position: relative;
-    color: rgb(223, 223, 223);
   }
 
   
@@ -109,6 +122,12 @@
   mat-icon{
     animation: floatAnimation 3s ease-in-out infinite;
   }
+
+  .green-line{
+    height: 45px;
+    width: 247px;
+  } 
+
   @media (min-width: 750px) {
     .neon {
       align-self: flex-end;

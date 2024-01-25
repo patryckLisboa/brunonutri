@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class InformationComponent {
   mensagensPassoAPasso = [
-    ` <p> 1° Passo <p> Escolha um plano que lhe for mais conveniente.`,
-    ` <p> 2° Passo <p> Preencha a ficha de anamnese detalhadamente.`,
-    ` <p> 3° Passo <p> Avaliação do seu caso e elaboração do plano com entrega em até 2 dias.`,
-    ` <p> 4° Passo <p> Envio do protocolo personalizado.`,
-    ` <p> 5° Passo <p> Envio de fotos para avaliação.`,
+    ` <p><b> 1° Passo </b><p> Escolha um plano que lhe for mais conveniente.`,
+    ` <p><b> 2° Passo </b><p> Preencha a ficha de anamnese detalhadamente.`,
+    ` <p><b> 3° Passo </b><p> Avaliação do seu caso e elaboração do plano com entrega em até 2 dias.`,
+    ` <p><b> 4° Passo </b><p> Envio do protocolo personalizado.`,
+    ` <p><b> 5° Passo </b><p> Envio de fotos para avaliação.`,
   ];
 
   mensagensComoFunciona = [
@@ -26,7 +26,7 @@ export class InformationComponent {
     <br> > atletas (Alta performance no fisiculturismo, futebol, ciclismo, maratonas e demais...)  
     <br> > pessoas comuns (ganho de massa muscular/ emagrecimento / mudança de composição corporal)  
     <br> > pessoas com patologias. (como diabetes obesidade, hipertensão, colesterol alto, doenças intestinais inflamatórias, etc...)`,
-  ];
+  ]; // fitness_center directions_bike local_hospital local_dining fastfood weekend
 
 
   elasticEffect(element: HTMLElement) {

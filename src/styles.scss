@@ -2,9 +2,9 @@
 
 * {
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  color: #fff; /* Cor de texto para informações adicionais */
+  font-weight: 400;
   transition: 0.5s ;
+  color: white; 
 }
 
 span {
@@ -17,9 +17,11 @@ button {
 
 p {
   font-size: 13px;
-  color: #fff; /* Cor de texto para informações adicionais */
 }
 
+b{
+  font-weight: 500;
+}
 body {
   margin: 0px;
 }

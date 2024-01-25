@@ -109,10 +109,12 @@
 
 .speech-bubble {
   width: 85px;
-  background: linear-gradient(to top, #17381980 20%, #4caf4f75 90%);
+  background: linear-gradient(to top,#4caf4f3d 10% ,  #17381980 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  border: 1px solid #ffffff85; /* Adiciona uma borda de 1px com cor #ffffff85 */
+  border: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral esquerda */
+  border-left: none; /* Adiciona uma borda na lateral esquerda */
+  border-right: none; /* Adiciona uma borda na lateral esquerda */
   padding: 10px;
   font-size: 13px;
 }
