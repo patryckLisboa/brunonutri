@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class InformationComponent {
   mensagensPassoAPasso = [
-    "1° passo, escolha um plano que lhe for mais conveniente.",
-    "2° passo, preencha a ficha de anamnese detalhadamente.",
-    "3° passo, avaliação do seu caso e elaboração do plano com entrega em até 2 dias.",
-    "4° passo, envio do protocolo personalizado.",
-    "5° passo, envio de fotos para avaliação.",
+    ` <p> 1° passo <p> Escolha um plano que lhe for mais conveniente.`,
+    ` <p> 2° passo <p> Preencha a ficha de anamnese detalhadamente.`,
+    ` <p> 3° passo <p> Avaliação do seu caso e elaboração do plano com entrega em até 2 dias.`,
+    ` <p> 4° passo <p> Envio do protocolo personalizado.`,
+    ` <p> 5° passo <p> Envio de fotos para avaliação.`,
   ];
 
   mensagensComoFunciona = [
@@ -37,6 +37,6 @@ export class InformationComponent {
   }
 
   getNeonIcon(texto = ""){
-    return `filter_${texto.charAt(0)}`
+    return `filter_${texto.match(/\d+/)}`
   }
 }

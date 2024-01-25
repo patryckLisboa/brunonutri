@@ -78,9 +78,6 @@
   padding-top: 70px;
 }
 
-.highlight-color {
-  color: #4caf50; /* Cor de destaque no tema de saúde e nutrição */
-}
 
 .clicked-elastic {
   animation: elasticMotion 1s ease-out;
@@ -111,7 +108,7 @@
 }
 
 .speech-bubble {
-  width: 105px;
+  width: 85px;
   background: linear-gradient(to top, #17381980 20%, #4caf4f75 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -123,7 +120,7 @@
 .speech-bubble-container {
   position: absolute;
   top: 130px;
-  left: 0;
+  left: 20%;
   animation: floatAnimation 3s ease-in-out infinite;
 }
 

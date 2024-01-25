@@ -1,10 +1,14 @@
 // @import "~ngx-materialize/dist/index";
 
 * {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 800;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   color: #fff; /* Cor de texto para informações adicionais */
   transition: 0.5s ;
+}
+
+span {
+  color: #4caf50; /* Cor de destaque no tema de saúde e nutrição */
 }
 
 button {
