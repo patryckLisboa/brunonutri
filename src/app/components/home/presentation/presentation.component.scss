@@ -3,7 +3,7 @@
   width: 100%;
   overflow: hidden;
   display: flex;
-  height: 110px;
+  height: 70px;
   align-items: center;
   justify-content: center;
 }
@@ -112,7 +112,7 @@
 
 .speech-bubble {
   width: 105px;
-  background: linear-gradient(to top, #17381971 20%, #62836571 90%);
+  background: linear-gradient(to top, #17381980 20%, #4caf4f75 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   border: 1px solid #ffffff85; /* Adiciona uma borda de 1px com cor #ffffff85 */

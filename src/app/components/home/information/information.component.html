@@ -1,60 +1,88 @@
 <div class="information">
-  <div class="background-img">
-    <div class="background-img-container">
+  <div class="img-container">
+    <div class="img-background">
       <img src="../../../../assets/img/gym.png" />
     </div>
-  </div>
-  <div class="body">
-    <div class="speech-bubble-container">
-      <h1>Como funciona?</h1>
-      <p>"Entenda o passo a passo para contratar o acompanhamento"</p>
-      <br />
-      <div
-        *ngFor="let mensagem of mensagensPassoAPasso"
-        class="speech-bubble"
-        #speechBubble
-        (click)="elasticEffect(speechBubble)"
-      >
-        <p class="speech-bubble-text" [innerHTML]="mensagem"></p>
-      </div>
-    </div>
-  </div>
-  <div class="background-img-2">
-    <div class="background-img-container-2">
-      <img src="../../../../assets/img/fundo-texto.png" />
-    </div>
-  </div>
-  <div class="body-2">
-    <div class="speech-bubble-container">
-      <h1>Entenda...</h1>
-
-      <div
-        *ngFor="let mensagem of mensagensComoFunciona"
-        class="speech-bubble"
-        #speechBubble
-        (click)="elasticEffect(speechBubble)"
-      >
-        <p class="speech-bubble-text-2" [innerHTML]="mensagem"></p>
-      </div>
-    </div>
-  </div>
-  <div class="background-img">
-    <div class="background-img-container">
-      <img src="../../../../assets/img/gym.png" />
-    </div>
-  </div>
-  <div class="body-3">
-    <div class="speech-bubble-container">
-      <h1>Para quem é o acompanhamento?</h1>
-
-      <div
-        *ngFor="let mensagem of mensagensParaQuem"
-        class="speech-bubble"
-        #speechBubble
-        (click)="elasticEffect(speechBubble)"
-      >
-        <p class="speech-bubble-text" [innerHTML]="mensagem"></p>
+    <div class="body-text">
+      <div class="container-neon">
+        <div class="title">
+          <h1>Como funciona?</h1>
+          <p>Entenda o passo a passo para contratar o acompanhamento</p>
+        </div>
+        <div
+          *ngFor="let mensagem of mensagensPassoAPasso"
+          class="neon"
+          #speechBubble
+          (click)="elasticEffect(speechBubble)"
+        >
+          <div>
+            <div class="icon-container">
+              <mat-icon [fontIcon]="getNeonIcon(mensagem)"></mat-icon>
+            </div>
+            <p [innerHTML]="mensagem"></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- 
+<div class="background-img">
+  <div class="background-img-container">
+    <img src="../../../../assets/img/gym.png" />
+  </div>
+</div>
+<div class="body">
+  <div class="speech-bubble-container">
+    <h1>Como funciona?</h1>
+    <p>"Entenda o passo a passo para contratar o acompanhamento"</p>
+    <br />
+    <div
+      *ngFor="let mensagem of mensagensPassoAPasso"
+      class="speech-bubble"
+      #speechBubble
+      (click)="elasticEffect(speechBubble)"
+    >
+      <p class="speech-bubble-text" [innerHTML]="mensagem"></p>
+    </div>
+  </div>
+</div>
+<div class="background-img-2">
+  <div class="background-img-container-2">
+    <img src="../../../../assets/img/fundo-texto.png" />
+  </div>
+</div>
+<div class="body-2">
+  <div class="speech-bubble-container">
+    <h1>Entenda...</h1>
+
+    <div
+      *ngFor="let mensagem of mensagensComoFunciona"
+      class="speech-bubble"
+      #speechBubble
+      (click)="elasticEffect(speechBubble)"
+    >
+      <p class="speech-bubble-text-2" [innerHTML]="mensagem"></p>
+    </div>
+  </div>
+</div>
+<div class="background-img">
+  <div class="background-img-container">
+    <img src="../../../../assets/img/gym.png" />
+  </div>
+</div>
+<div class="body-3">
+  <div class="speech-bubble-container">
+    <h1>Para quem é o acompanhamento?</h1>
+
+    <div
+      *ngFor="let mensagem of mensagensParaQuem"
+      class="speech-bubble"
+      #speechBubble
+      (click)="elasticEffect(speechBubble)"
+    >
+      <p class="speech-bubble-text" [innerHTML]="mensagem"></p>
+    </div>
+  </div>
+</div> -->

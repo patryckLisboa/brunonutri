@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class InformationComponent {
   mensagensPassoAPasso = [
-    "( 1 ) 1° passo, escolha um plano que lhe for mais conveniente.",
-    "( 2 ) 2° passo, preencha a ficha de anamnese detalhadamente.",
-    "( 3 ) 3° passo, avaliação do seu caso e elaboração do plano com entrega em até 2 dias.",
-    "( 4 ) 4° passo, envio do protocolo personalizado.",
-    "( 5 ) 5° passo, envio de fotos para avaliação.",
+    "1° passo, escolha um plano que lhe for mais conveniente.",
+    "2° passo, preencha a ficha de anamnese detalhadamente.",
+    "3° passo, avaliação do seu caso e elaboração do plano com entrega em até 2 dias.",
+    "4° passo, envio do protocolo personalizado.",
+    "5° passo, envio de fotos para avaliação.",
   ];
 
   mensagensComoFunciona = [
@@ -34,5 +34,9 @@ export class InformationComponent {
     setTimeout(() => {
       element.classList.remove('clicked-elastic');
     }, 1000);
+  }
+
+  getNeonIcon(texto = ""){
+    return `filter_${texto.charAt(0)}`
   }
 }
