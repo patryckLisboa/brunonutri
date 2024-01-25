@@ -1,3 +1,38 @@
+.green-center-line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(
+    76,
+    175,
+    80,
+    0.5
+  ); /* Adiciona uma borda na lateral esquerda */
+}
+
+.green-center-circle {
+  border: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral esquerda */
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;;
+}
+.green-center-circle mat-icon {
+  height: 50px;
+  font-size: 50px;
+  color: green;
+  width: 50px;
+  color: rgba(76, 175, 79, 0.5);
+  position: absolute;
+}
+
+.green-center-container {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
 .information {
   width: 100%;
 
@@ -5,8 +40,8 @@
     margin-top: 0px;
     height: 800px;
   }
-  
-  .img-background{
+
+  .img-background {
     position: absolute;
     width: 100vw;
     overflow: hidden;
@@ -19,15 +54,15 @@
     position: relative;
     right: -420px;
     top: 60px;
-    opacity: .5;
+    opacity: 0.5;
   }
-  
+
   .container-neon {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
   }
-  
+
   .neon {
     z-index: 1;
     position: relative;
@@ -38,34 +73,38 @@
     padding: 5px 15px;
     display: flex;
     align-items: center;
-    background: linear-gradient(to top, rgba(2, 150, 12, 0.144)  10%, transparent 90%);
+    background: linear-gradient(
+      to top,
+      rgba(2, 150, 12, 0.144) 10%,
+      transparent 90%
+    );
   }
-  
+
   .neon div {
     display: flex;
     align-items: center;
   }
-  
-  mat-icon {
+
+  .icon-container mat-icon {
     z-index: 0;
     font-size: 80px;
     height: 100%;
     width: 68px;
     color: rgba(76, 175, 79, 0.5);
   }
-  
-  .title{
+
+  .title {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  .title h1{
+  .title h1 {
     font-size: 50px;
     font-weight: 500;
   }
 
-  .green-line{
+  .green-line {
     height: 75px;
     width: 390px;
     position: absolute;
@@ -76,7 +115,7 @@
     border-left: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral esquerda */
     border-right: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral direita */
     border-bottom: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral direita */
-  } 
+  }
 
   .neon div p {
     z-index: 1;
@@ -85,7 +124,6 @@
     position: relative;
   }
 
-  
   @media (min-width: 750px) {
     .neon {
       width: 50%;
@@ -98,35 +136,36 @@
     }
   }
 }
-.first{
+.first {
   .neon {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     margin-right: 20%;
-  } 
+  }
 }
-.second{
+.second {
   .neon {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     margin-left: 20%;
-  } 
-  img{
-    height: 800px;
-    left: -190px
   }
-  .img-background{
+  img {
+    height: 600px;
+    left: -130px;
+  }
+  .img-background {
     justify-content: flex-start;
   }
 
-  mat-icon{
+  .icon-container mat-icon {
+    width: 75px;
     animation: floatAnimation 3s ease-in-out infinite;
   }
 
-  .green-line{
-    height: 45px;
-    width: 247px;
-  } 
+  .green-line {
+    height: 75px;
+    width: 390px;
+  }
 
   @media (min-width: 750px) {
     .neon {
@@ -135,8 +174,8 @@
     .img-container {
       margin-top: 0px;
     }
-    img{
-      left: -50px
+    img {
+      left: -50px;
     }
   }
 }
@@ -155,7 +194,6 @@
 //   overflow: hidden;
 //   width: 100%;
 // }
-
 
 // .background-img {
 //   position: absolute;

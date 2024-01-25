@@ -22,11 +22,18 @@ export class InformationComponent {
   ];
 
   mensagensParaQuem = [
-    `O acompanhamento é bastante flexível, atendendo dês de:  
-    <br> > atletas (Alta performance no fisiculturismo, futebol, ciclismo, maratonas e demais...)  
-    <br> > pessoas comuns (ganho de massa muscular/ emagrecimento / mudança de composição corporal)  
-    <br> > pessoas com patologias. (como diabetes obesidade, hipertensão, colesterol alto, doenças intestinais inflamatórias, etc...)`,
-  ]; // fitness_center directions_bike local_hospital local_dining fastfood weekend
+    { text: `<p><b>Atletas</b></p> Alta performance no fisiculturismo, futebol, ciclismo, maratonas e demais...`, icon: "fitness_center" },
+    { text: `<p><b>Pessoas comuns</b></p> Ganho de massa muscular, emagrecimento, mudança de composição corporal, dentre outros...`, icon: "weekend" },
+    { text: `<p><b>Pessoas com patologias</b></p> Como diabetes, obesidade, hipertensão, colesterol alto, doenças intestinais inflamatórias, etc...`, icon: "local_hospital" }
+  ];
+  
+
+  //  [
+  //   `O acompanhamento é bastante flexível, atendendo dês de:  
+  //   <br> > atletas (Alta performance no fisiculturismo, futebol, ciclismo, maratonas e demais...)  
+  //   <br> > pessoas comuns (ganho de massa muscular/ emagrecimento / mudança de composição corporal)  
+  //   <br> > pessoas com patologias. (como diabetes obesidade, hipertensão, colesterol alto, doenças intestinais inflamatórias, etc...)`,
+  // ]; // fitness_center directions_bike local_hospital local_dining fastfood weekend
 
 
   elasticEffect(element: HTMLElement) {

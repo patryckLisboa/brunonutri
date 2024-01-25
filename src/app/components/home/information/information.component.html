@@ -8,7 +8,10 @@
         <div class="title">
           <h1>Como funciona?</h1>
           <div class="green-line"></div>
-          <p>"Entenda o <span>passo a passo</span> para <span>contratar</span> o acompanhamento"</p>
+          <p>
+            "Entenda o <span>passo a passo</span> para <span>contratar</span> o
+            acompanhamento"
+          </p>
         </div>
         <div
           *ngFor="let mensagem of mensagensPassoAPasso"
@@ -27,6 +30,13 @@
     </div>
   </div>
 </div>
+<div class="green-center-container">
+  <div class="green-center-line"></div>
+  <div>
+    <div class="green-center-circle"><mat-icon fontIcon="local_dining"></mat-icon></div>
+  </div>
+  <div class="green-center-line"></div>
+</div>
 <div class="second information">
   <div class="img-container">
     <div class="img-background">
@@ -35,27 +45,30 @@
     <div class="body-text">
       <div class="container-neon">
         <div class="title">
-          <h1>Entenda...</h1>
+          <h1>Para quem é?</h1>
           <div class="green-line"></div>
+          <p>
+            "O <span>acompanhamento</span> é bastante
+            <span>flexível,</span> atendendo dês de..."
+          </p>
         </div>
         <div
-          *ngFor="let mensagem of mensagensComoFunciona"
+          *ngFor="let mensagem of mensagensParaQuem"
           class="neon"
           #speechBubble
           (click)="elasticEffect(speechBubble)"
         >
           <div>
             <div class="icon-container">
-              <mat-icon fontIcon="speaker_notes"></mat-icon>
+              <mat-icon [fontIcon]="mensagem.icon"></mat-icon>
             </div>
-            <p [innerHTML]="mensagem"></p>
+            <p [innerHTML]="mensagem.text"></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <!-- 
 
 <div class="background-img-2">
