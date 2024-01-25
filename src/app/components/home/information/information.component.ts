@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class InformationComponent {
   mensagensPassoAPasso = [
-    ` <p> 1° passo <p> Escolha um plano que lhe for mais conveniente.`,
-    ` <p> 2° passo <p> Preencha a ficha de anamnese detalhadamente.`,
-    ` <p> 3° passo <p> Avaliação do seu caso e elaboração do plano com entrega em até 2 dias.`,
-    ` <p> 4° passo <p> Envio do protocolo personalizado.`,
-    ` <p> 5° passo <p> Envio de fotos para avaliação.`,
+    ` <p> 1° Passo <p> Escolha um plano que lhe for mais conveniente.`,
+    ` <p> 2° Passo <p> Preencha a ficha de anamnese detalhadamente.`,
+    ` <p> 3° Passo <p> Avaliação do seu caso e elaboração do plano com entrega em até 2 dias.`,
+    ` <p> 4° Passo <p> Envio do protocolo personalizado.`,
+    ` <p> 5° Passo <p> Envio de fotos para avaliação.`,
   ];
 
   mensagensComoFunciona = [
