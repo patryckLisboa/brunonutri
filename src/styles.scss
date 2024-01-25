@@ -28,24 +28,5 @@ body {
   background-color: transparent; /* Cor do "polegar" (barra de rolagem) */
 }
 
-.logo-container {
-  z-index: 0;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  padding-top: 40px;
-  font-size: 20pt;
-  color: #ffffff85;
-  display: flex;
-  justify-content: center;
-}
-
-.logo-container p {
-  border: 1px solid #ffffff85; /* Adiciona uma borda de 1px com cor #ffffff85 */
-  border-radius: 10px;
-  width: 125px;
-  padding: 2px;
-}
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

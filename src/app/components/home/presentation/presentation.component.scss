@@ -1,3 +1,18 @@
+.logo-container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  height: 110px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container img {
+  height: 125px;
+}
+
+
 .background-overlay {
   position: fixed;
   width: 100%;
