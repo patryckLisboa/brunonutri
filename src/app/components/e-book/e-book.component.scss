@@ -1,0 +1,94 @@
+.e-book {
+  flex-direction: column;
+  padding: 15px 10vw;
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.img-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/img/e-book/wallpaperflare.com_wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ff2222;
+}
+
+header {
+  background-color: #4e688349;
+  color: white;
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+ul {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+li {
+  margin-bottom: 10px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+footer {
+  background-color: #3333339d;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+// @import "~ngx-materialize/dist/index";
+
+* {
+  font-family: "Roboto", sans-serif;
+  transition: 0.5s;
+  color: white;
+}
+
+span {
+  color: #4caf50; /* Cor de destaque no tema de saúde e nutrição */
+}
+
+::-webkit-scrollbar {
+  width: 0.1px; /* Defina a largura da barra de rolagem como 0 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Cor do "polegar" (barra de rolagem) */
+}
+
+// // body {
+// //   margin: 0;
+// //   font-family: Roboto, "Helvetica Neue", sans-serif;
+// // }

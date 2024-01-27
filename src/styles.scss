@@ -1,38 +1,3 @@
-// @import "~ngx-materialize/dist/index";
-
-* {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  transition: 0.5s ;
-  color: white; 
-}
-
-span {
-  color: #4caf50; /* Cor de destaque no tema de saúde e nutrição */
-}
-
-button {
-  padding: 10px 15px 0px; /* Aumentei um pouco o padding para destacar o botão */
-}
-
-p {
-  font-size: 13px;
-}
-
-b{
-  font-weight: 500;
-}
 body {
   margin: 0px;
 }
-
-::-webkit-scrollbar {
-  width: 0.1px; /* Defina a largura da barra de rolagem como 0 */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Cor do "polegar" (barra de rolagem) */
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
