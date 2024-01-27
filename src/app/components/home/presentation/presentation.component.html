@@ -1,15 +1,24 @@
 <div class="background-overlay"></div>
 <div class="logo-container">
   <!-- <p #logo (click)="elasticEffect(logo)">Team Corrêa ©</p> -->
-  <img #logo (click)="elasticEffect(logo)" src="../../../../assets/img/new-logo.png">
+  <img
+    #logo
+    (click)="elasticEffect(logo)"
+    src="../../../../assets/img/new-logo.png"
+  />
+  <button
+    class="button"
+    routerLink="/ebook"
+  >
+    <p>Ir para outra tela <i class="fas fa-angle-double-right"></i></p>
+  </button>
 </div>
 <div class="rows presentation-panel">
   <div class="floating-text-container">
     <div class="floating-text">
       <h2>
         Descubra como um acompanhamento
-        <span> individualizado e adaptado</span> para
-        seus objetivos pode te
+        <span> individualizado e adaptado</span> para seus objetivos pode te
         <span>levar ao físico que sempre sonhou</span>
       </h2>
       <div>
@@ -52,8 +61,7 @@
   <div class="floating-mobile-text">
     <h2>
       Descubra como um acompanhamento
-      <span> individualizado e adaptado</span> para seus
-      objetivos pode te
+      <span> individualizado e adaptado</span> para seus objetivos pode te
       <span>levar ao físico que sempre sonhou</span>
     </h2>
     <div>
