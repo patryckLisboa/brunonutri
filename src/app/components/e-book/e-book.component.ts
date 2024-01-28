@@ -9,7 +9,7 @@ export class EBookComponent {
   paginaAtual = 1;
   @HostListener('window:scroll')
   onScroll(): void {
-    const alturaPagina = 575;
+    const alturaPagina = 574;
     const posicaoScroll = window.scrollY 
     this.paginaAtual = Math.ceil(posicaoScroll / alturaPagina);
   }
