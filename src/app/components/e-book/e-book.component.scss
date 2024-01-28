@@ -41,7 +41,7 @@ mat-icon {
 
 section {
   background-color: black;
-  width: 88%;
+  width: 89%;
   padding: 5%;
   height: 528px;
   display: flex;
@@ -67,6 +67,7 @@ section {
 }
 
 .container-bottom-img {
+  opacity: 1;
   align-items:  flex-end; /* centraliza verticalmente */
 }
 
@@ -112,7 +113,7 @@ footer {
 
 span {
   color: yellow;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 

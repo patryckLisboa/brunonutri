@@ -6,7 +6,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./e-book.component.scss'],
 })
 export class EBookComponent {
-  paginaAtual = 1;
+  paginaAtual = 0;
   @HostListener('window:scroll')
   onScroll(): void {
     const alturaPagina = 575;
