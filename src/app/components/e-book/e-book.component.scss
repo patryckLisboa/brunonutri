@@ -1,8 +1,17 @@
+.title{
+  display: flex;
+  align-items: center;
+  border: 1px solid yellow; /* Adiciona uma borda na lateral esquerda */
+  border-left: none;
+  border-right: none;
+}
+
 .pagina-atual-container{
   position: fixed;
   width: 100%;
   text-align: -webkit-center;
 }
+
 .pagina-atual{
   border-radius: 100px;
   margin-top: 5px;
@@ -24,7 +33,16 @@
 }
 
 mat-icon {
-  z-index: 9999;
+  color: yellow;
+  font-size: 40pt;
+  min-width: 55px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+i{
+  color: yellow;
 }
 
 .body {
@@ -103,8 +121,8 @@ h1 {
 
 h2 {
   font-size: 21pt;
+  margin: 0;
 }
-
 footer {
   background-color: #3333339d;
   padding: 20px;

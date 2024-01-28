@@ -7,18 +7,11 @@ import { Component, HostListener } from '@angular/core';
 })
 export class EBookComponent {
   paginaAtual = 0;
+  
   @HostListener('window:scroll')
   onScroll(): void {
-    const alturaPagina = 575;
-    const posicaoScroll = window.scrollY 
-    this.paginaAtual = Math.ceil(posicaoScroll / alturaPagina);
+    this.paginaAtual = Math.ceil(window.scrollY  / 575);
   }
-
-  ngAfterViewInit(): void {
-    const sections = document.querySelectorAll('.body > section');
-    console.log('Número de sections:', sections.length);
-  }
-
   
 }
  
