@@ -27,10 +27,6 @@ mat-icon {
   z-index: 9999;
 }
 
-.insta-img {
-  border-radius: 15px;
-}
-
 .body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   line-height: 1.6;
@@ -66,13 +62,18 @@ section {
   display: flex; /* usa flexbox para centralizar */
   justify-content: center; /* centraliza horizontalmente */
   align-items: center; /* centraliza verticalmente */
-  border: 1px solid #ccc; /* apenas para visualização */
   opacity: 0.5;
   border-radius: 15px;
 }
 
+.container-bottom-img {
+  align-items:  flex-end; /* centraliza verticalmente */
+}
+
+
 .container-img img {
-  max-width: 100%; /* impede que a imagem ultrapasse a largura da div */
+  min-width: 100%; /* impede que a imagem ultrapasse a largura da div */
+  min-height: 100%;
   object-fit: contain;
 }
 
@@ -94,13 +95,13 @@ li {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 27pt;
   margin: 0;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 21pt;
 }
 
 footer {
@@ -112,4 +113,21 @@ footer {
 span {
   color: yellow;
   font-weight: 500;
+}
+
+
+@media (max-width: 400px) {
+  p,
+  ul {
+    font-size: 10pt;
+  }
+
+  h1 {
+    font-size: 20pt;
+  }
+  
+  h2 {
+    font-size: 15pt;
+  }
+  
 }
