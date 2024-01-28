@@ -1,3 +1,28 @@
+.pagina-atual-container{
+  position: fixed;
+  width: 100%;
+  text-align: -webkit-center;
+}
+.pagina-atual{
+  border-radius: 100px;
+  margin-top: 5px;
+  padding: 5px 15px;
+  color: whitesmoke;
+  text-align: center;
+  max-width: 50px;
+  border: 1px solid rgba(180, 180, 180, 0.5); /* Adiciona uma borda na lateral esquerda */
+  border-left: none; /* Adiciona uma borda na lateral esquerda */
+  border-right: none; /* Adiciona uma borda na lateral esquerda */
+  background: linear-gradient(
+    to top,
+    rgba(160, 160, 160, 0.144) 10%,
+    transparent 90%
+  );
+}
+.pagina-atual h1 {
+  font-weight: 900;
+}
+
 mat-icon {
   z-index: 9999;
 }
@@ -14,14 +39,14 @@ mat-icon {
   display: flex;
   flex-direction: column;
   background-color: silver;
-  row-gap: 10px;
+  row-gap: 5px;
+  align-items: center;
 }
 
 section {
   background-color: black;
-  width: 91%;
-  max-width: 8.5in;
-  padding: 20px;
+  width: 88%;
+  padding: 5%;
   height: 528px;
   display: flex;
   flex-direction: column;
