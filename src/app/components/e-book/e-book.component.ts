@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-e-book',
-  standalone: true,
-  imports: [],
   templateUrl: './e-book.component.html',
-  styleUrl: './e-book.component.scss'
+  styleUrls: ['./e-book.component.scss'],
 })
 export class EBookComponent {
-
+  ngAfterViewInit(): void {
+    const sections = document.querySelectorAll('.body > section');
+    console.log('Número de sections:', sections.length);
+  }
 }
+ 

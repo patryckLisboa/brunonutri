@@ -11,6 +11,7 @@ import { EvolutionsComponent } from './components/home/evolutions/evolutions.com
 import { InformationComponent } from './components/home/information/information.component';
 import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.component';
 import { SwiperModule } from 'swiper/angular';
+import { EBookComponent } from './components/e-book/e-book.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SwiperModule } from 'swiper/angular';
     EvolutionsComponent,
     InformationComponent,
     PCarouselComponent,
+    EBookComponent
   ],
   imports: [
     BrowserModule,
