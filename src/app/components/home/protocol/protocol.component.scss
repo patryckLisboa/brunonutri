@@ -14,6 +14,42 @@
   background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
 }
 
+.silver-line-container {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+}
+.silver-line {
+  position: relative;
+  transform: translateZ(20px);
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+  border-left: 5px solid rgba(126, 126, 126, 0.8);
+  border-bottom: 5px solid rgba(126, 126, 126, 0.8);
+  padding: 15px;
+  bottom: 5px;
+}
+
+.title {
+  border-bottom: 2px solid silver;
+  font-family: Arial, sans-serif;
+  width: 200px;
+}
+
+.title h1 {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+.title p {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
 .green-center-line {
   height: 1px;
   width: 100%;
@@ -56,7 +92,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  top: 50px;
+  top: 60px;
   width: 100%;
   justify-content: center;
   align-items: flex-end;
@@ -65,10 +101,10 @@
   transform: perspective(1000px);
 }
 
-.speech-bubble-container mat-icon{
-    font-size: 50px;
-    height: 100%;
-    width: 100%;
+.speech-bubble-container mat-icon {
+  font-size: 50px;
+  height: 100%;
+  width: 100%;
 }
 
 .speech-bubble {
@@ -88,29 +124,47 @@
   text-transform: uppercase;
 }
 
-.footer-container{
-    height: 100%;
-    display: flex;
-    width: 100%;
-    align-items: flex-end;
-    justify-content: center;
+.footer-container {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.footer{
-    position: relative;
-    transform: translateZ(20px);
-    background: linear-gradient(to top, #9999993d 10%, #49494980 90%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    height: 150px;
-    width: 90%;
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Adiciona uma borda na lateral esquerda */
-    border-left: none; /* Adiciona uma borda na lateral esquerda */
-    border-right: none; /* Adiciona uma borda na lateral esquerda */
-    padding: 15px;
-    font-size: 14px;
-    bottom: 0;
+// .footer{
+//     position: relative;
+//     transform: translateZ(20px);
+//     background: linear-gradient(to top, #9999993d 10%, #49494980 90%);
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
+//     border-top-right-radius: 30px;
+//     border-top-left-radius: 30px;
+//     height: 150px;
+//     width: 90%;
+//     border: 1px solid rgba(0, 0, 0, 0.5); /* Adiciona uma borda na lateral esquerda */
+//     border-left: none; /* Adiciona uma borda na lateral esquerda */
+//     border-right: none; /* Adiciona uma borda na lateral esquerda */
+//     padding: 15px;
+//     font-size: 14px;
+//     bottom: 0;
+// }
+
+.footer {
+  position: relative;
+  transform: translateZ(20px);
+  background: linear-gradient(
+    to top,
+    rgba(153, 153, 153, 0.2392156863) 10%,
+    rgba(73, 73, 73, 0.5019607843) 90%
+  );
+  height: 140px;
+  width: 90%;
+  border-top-right-radius: 500px;
+  padding: 15px;
+  font-size: 14px;
+  bottom: 5px;
+  border-right: 5px solid rgba(126, 126, 126, 0.8);
 }
 
 .two {

@@ -14,7 +14,6 @@ export class ProtocolComponent {
 
     text = `O acompanhamento é bastante flexível, atendendo dês de:  
     <br> > atletas (Alta performance no fisiculturismo, futebol, ciclismo, maratonas e demais...)  
-    <br> > pessoas comuns (ganho de massa muscular/ emagrecimento / mudança de composição corporal)  
-    <br> > pessoas com patologias. (como diabetes obesidade, ....`; 
+    <br> > pessoas comuns (ganho de massa  ....`; 
     // fitness_center directions_bike local_hospital local_dining fastfood weekend
 }
