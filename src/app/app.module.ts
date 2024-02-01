@@ -12,6 +12,7 @@ import { InformationComponent } from './components/home/information/information.
 import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.component';
 import { SwiperModule } from 'swiper/angular';
 import { EBookComponent } from './components/e-book/e-book.component';
+import { ProtocolComponent } from './components/home/protocol/protocol.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EBookComponent } from './components/e-book/e-book.component';
     EvolutionsComponent,
     InformationComponent,
     PCarouselComponent,
-    EBookComponent
+    EBookComponent,
+    ProtocolComponent
   ],
   imports: [
     BrowserModule,

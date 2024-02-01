@@ -80,15 +80,12 @@ section {
   display: flex; /* usa flexbox para centralizar */
   justify-content: center; /* centraliza horizontalmente */
   align-items: center; /* centraliza verticalmente */
-  opacity: 0.5;
   border-radius: 15px;
 }
 
 .container-bottom-img {
-  opacity: 1;
   align-items:  flex-end; /* centraliza verticalmente */
 }
-
 
 .container-img img {
   min-width: 100%; /* impede que a imagem ultrapasse a largura da div */
