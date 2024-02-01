@@ -1,32 +1,43 @@
-.protocol {
-  position: relative; /* Para que o elemento pseudo fique posicionado em relação ao elemento pai */
-  height: 800px; /* ajuste conforme necessário */
-  background-image: url("../../../../assets/img/imig7.jpeg");
-  background-size: cover;
-  background-position: center;
+.background-container{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 750px;
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
 }
 
-.protocol::before {
-  content: ""; /* Necessário para criar um pseudo-elemento */
-  position: absolute; /* Posicionamento absoluto em relação ao elemento pai */
-  width: 100%;
-  height: 100%;
+.background{
+  position: relative;
+  border-bottom-right-radius: 300px;
+  box-shadow: 0 0 25px rgba(76, 175, 80, 0.8);
+  height: 750px;
+  left: -25px;
+}
+
+
+.protocol {
+  position: relative; /* Para que o elemento pseudo fique posicionado em relação ao elemento pai */
+  height: 1320px; /* ajuste conforme necessário */
   background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
 }
+
 
 .silver-line-container {
   position: absolute;
   height: 100%;
   display: flex;
+  z-index: 1;
   width: 100%;
   align-items: flex-end;
   justify-content: center;
 }
+
 .silver-line {
   position: relative;
-  transform: translateZ(20px);
   width: 90%;
-  height: 90%;
+  height: 93%;
   border-radius: 5px;
   border-left: 5px solid rgba(126, 126, 126, 0.8);
   border-bottom: 5px solid rgba(126, 126, 126, 0.8);
@@ -70,7 +81,6 @@
 .green-center-circle mat-icon {
   height: 50px;
   font-size: 50px;
-  color: green;
   width: 50px;
   color: rgba(76, 175, 79, 0.5);
   position: absolute;
@@ -91,8 +101,8 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
-  top: 60px;
+  row-gap: 30px;
+  top: 140px;
   width: 100%;
   justify-content: center;
   align-items: flex-end;
@@ -105,11 +115,17 @@
   font-size: 50px;
   height: 100%;
   width: 100%;
+  transform: translateY(18px);
+  color: #4caf50;
+
+}
+
+.rotate{
+  transform: translateZ(20px);
 }
 
 .speech-bubble {
   position: relative;
-  transform: translateZ(20px);
   background: linear-gradient(to top, #9999993d 10%, #49494980 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -120,7 +136,7 @@
   border-left: none; /* Adiciona uma borda na lateral esquerda */
   border-right: none; /* Adiciona uma borda na lateral esquerda */
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -130,7 +146,9 @@
   display: flex;
   width: 100%;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 // .footer{
@@ -152,29 +170,51 @@
 
 .footer {
   position: relative;
-  transform: translateZ(20px);
-  background: linear-gradient(
-    to top,
-    rgba(153, 153, 153, 0.2392156863) 10%,
-    rgba(73, 73, 73, 0.5019607843) 90%
-  );
-  height: 140px;
+  height: 200px;
   width: 90%;
   border-top-right-radius: 500px;
   padding: 15px;
   font-size: 14px;
   bottom: 5px;
   border-right: 5px solid rgba(126, 126, 126, 0.8);
+  align-self: center;
+  background-color: black;
+  box-shadow: 15px -30px 20px -40px rgba(76, 175, 80, 0.8);
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.footer h1 {
+  transform: translateY(45px);
+  font-size: 34px;
+
+}
+.footer p {
+  transform: translateY(45px);
+  font-size: 20px;
+}
+
+.text-footer{
+  background-color: black;
+  height: 300px;
+  width: 90%;
+  padding: 15px;
+  border-right: 5px solid rgba(126, 126, 126, 0.8);
+  align-self: center;
+  transform: translateY(-5px);
+}
+.text-footer li{
+  transform: translateY(-40px);
+  margin-bottom: 10px ;
 }
 
 .two {
-  right: 7%;
+  right: 10%;
 }
 .three {
-  right: 14%;
+  right: 20%;
 }
 .four {
-  right: 21%;
+  right: 40%;
 }
 
 .one,
@@ -182,7 +222,7 @@
 .three,
 .four {
   transform-style: preserve-3d; /* Define que os elementos filhos devem respeitar a perspectiva do pai */
-  animation: rotateY 3s infinite linear; /* Aplica a animação de rotação */
+  animation: rotateY 4s infinite linear; /* Aplica a animação de rotação */
 }
 
 @keyframes rotateY {
@@ -206,9 +246,9 @@
 @keyframes floatAnimation {
   0%,
   100% {
-    transform: translateY(-3px);
+    box-shadow: 15px -30px 20px -40px rgba(76, 175, 80, 0.8);
   }
   50% {
-    transform: translateY(3px);
+    box-shadow: 15px -20px 20px -40px rgba(76, 175, 80, 0.8);
   }
 }
