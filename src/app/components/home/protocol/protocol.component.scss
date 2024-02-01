@@ -2,7 +2,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  height: 750px;
+  height: 770px;
   z-index: -1;
   width: 100%;
   overflow: hidden;
@@ -19,7 +19,7 @@
 
 .protocol {
   position: relative; /* Para que o elemento pseudo fique posicionado em relação ao elemento pai */
-  height: 1320px; /* ajuste conforme necessário */
+  height: 1330px; /* ajuste conforme necessário */
   background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
 }
 
@@ -184,12 +184,12 @@
 }
 
 .footer h1 {
-  transform: translateY(45px);
+  transform: translateY(65px);
   font-size: 34px;
 
 }
 .footer p {
-  transform: translateY(45px);
+  transform: translateY(65px);
   font-size: 20px;
 }
 
