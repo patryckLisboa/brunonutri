@@ -106,7 +106,6 @@
   width: 100%;
   justify-content: center;
   align-items: flex-end;
-  right: 7%;
   transform-style: preserve-3d;
   transform: perspective(1000px);
 }
@@ -206,15 +205,17 @@
   transform: translateY(-40px);
   margin-bottom: 10px ;
 }
-
+.one {
+  right: 6%;
+}
 .two {
-  right: 10%;
+  right: 12%;
 }
 .three {
-  right: 20%;
+  right: 24%;
 }
 .four {
-  right: 40%;
+  right: 48%;
 }
 
 .one,
