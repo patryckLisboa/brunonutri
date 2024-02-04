@@ -26,3 +26,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 * {
   transition: 0.5s ;
 }
+
+.button {
+  display: inline-block;
+  background-color: #4caf50; /* Cor do botão seguindo o tema */
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #367c3d; /* Cor mais escura no hover */
+}

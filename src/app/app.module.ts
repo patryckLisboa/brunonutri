@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PresentationComponent } from './components/home/presentation/presentation.component';
-import { MatIconModule } from '@angular/material/icon'; 
+import { MatIconModule } from '@angular/material/icon';
 import { PNavigationComponent } from './shared/components/p-navigation/p-navigation.component';
 import { EvolutionsComponent } from './components/home/evolutions/evolutions.component';
 import { InformationComponent } from './components/home/information/information.component';
@@ -13,6 +13,9 @@ import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.co
 import { SwiperModule } from 'swiper/angular';
 import { EBookComponent } from './components/e-book/e-book.component';
 import { ProtocolComponent } from './components/home/protocol/protocol.component';
+import { PlansComponent } from './components/home/plans/plans.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -24,15 +27,19 @@ import { ProtocolComponent } from './components/home/protocol/protocol.component
     InformationComponent,
     PCarouselComponent,
     EBookComponent,
-    ProtocolComponent
+    ProtocolComponent,
+    PlansComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
-    SwiperModule
+    SwiperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

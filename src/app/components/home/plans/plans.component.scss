@@ -1,0 +1,39 @@
+.plans {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.green-center-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(76, 175, 80, 0.5);
+}
+
+.plan-container {
+  padding: 10px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 500px;
+  max-width: 350px;
+  width: 90%;
+  margin: 30px auto 0px;
+  // border: 1px solid rgba(76, 175, 80, 0.5);
+  backdrop-filter: blur(50px);
+  background-color: rgba(41, 41, 41, 0.315);
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.buttons h2,
+p {
+  display: inline-block;
+}
+
+::ng-deep .mdc-label {
+  color: #fff;
+}
