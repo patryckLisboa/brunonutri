@@ -1,58 +1,63 @@
 <div class="green-center-line"></div>
-<div class="plans" *ngFor="let plan of plans">
-  <div class="plan-container">
-    <div>
+<div class="title">
+  <h1>
+    <span><b>Planos</b></span>
+  </h1>
+  <p>Qual o melhor plano para voce?</p>
+</div>
+<div class="plans">
+  <div class="plan-container" *ngFor="let plan of plans">
+    <div class="title-plan">
       <h1>{{ plan.period }}</h1>
-      <div class="green-center-line"></div>
     </div>
-    <mat-radio-group
-      [value]="plan.selectedPlan"
-      (change)="onChangeSelectedPlan($event, plan.id)"
-    >
-      <mat-radio-button value="1">Opção 1</mat-radio-button>
-      <mat-radio-button value="2">Opção 2</mat-radio-button>
-      <mat-radio-button value="3">Opção 3</mat-radio-button>
-    </mat-radio-group>
-    <div>
-      <p [innerHTML]="plan.describe"></p>
-    </div>
-    <div class="buttons">
-      <div *ngIf="plan.selectedPlan == '1'">
-        <div>
-          <h1>Normal</h1>
-          <p>R$</p>
-          <h2>{{ plan.normal }}</h2>
-          <p>,00/Mês</p>
+    <div class="green-center-line"></div>
+
+    <div class="plan">
+      <mat-radio-group
+        [value]="plan.selectedPlan"
+        (change)="onChangeSelectedPlan($event, plan.id)"
+      >
+        <mat-radio-button value="1">Normal</mat-radio-button>
+        <mat-radio-button value="2">Ergogên.</mat-radio-button>
+        <mat-radio-button value="3">Treino</mat-radio-button>
+      </mat-radio-group>
+      <div>
+        <p [innerHTML]="plan.describe"></p>
+      </div>
+      <div class="buttons">
+        <div *ngIf="plan.selectedPlan == '1'">
+          <div>
+            <h1>Preço normal</h1>
+            <p>R$</p>
+            <h2>{{ plan.normal }}</h2>
+            <p>,00/Mês</p>
+          </div>
         </div>
+        <div *ngIf="plan.selectedPlan == '2'">
+          <div>
+            <h1>Com Ergogênicos</h1>
+            <p>R$</p>
+            <h2>{{ plan.valorErgogenico }}</h2>
+            <p>,00/Mês</p>
+          </div>
+        </div>
+        <div *ngIf="plan.selectedPlan == '3'">
+          <div>
+            <h1>Com Treino</h1>
+            <p>R$</p>
+            <h2>{{ plan.valorTreino }}</h2>
+            <p>,00/Mês</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="plan.months">
+        <p>Total de R$ {{ plan.months ? plan.normal * plan.months : 0 }},00</p>
+      </div>
+      <div>
         <button class="button" target="_blank">
           <p>Contratar <i class="fas fa-angle-double-right"></i></p>
         </button>
       </div>
-      <div *ngIf="plan.selectedPlan == '2'">
-        <div>
-          <h1>Com Ergogênicos</h1>
-          <p>R$</p>
-          <h2>{{ plan.valorErgogenico }}</h2>
-          <p>,00/Mês</p>
-        </div>
-        <button class="button" target="_blank">
-          <p>Contratar <i class="fas fa-angle-double-right"></i></p>
-        </button>
-      </div>
-      <div *ngIf="plan.selectedPlan == '3'">
-        <div>
-          <h1>Com Treino</h1>
-          <p>R$</p>
-          <h2>{{ plan.valorTreino }}</h2>
-          <p>,00/Mês</p>
-        </div>
-        <button class="button" target="_blank">
-          <p>Contratar <i class="fas fa-angle-double-right"></i></p>
-        </button>
-      </div>
     </div>
-    <p *ngIf="plan.months">
-      A vista R$ {{ plan.months ? plan.normal * plan.months : 0 }},00
-    </p>
   </div>
 </div>
