@@ -5,20 +5,19 @@
       <h1>{{ plan.period }}</h1>
       <div class="green-center-line"></div>
     </div>
+    <mat-radio-group
+      [value]="plan.selectedPlan"
+      (change)="onChangeSelectedPlan($event, plan.id)"
+    >
+      <mat-radio-button value="1">Opção 1</mat-radio-button>
+      <mat-radio-button value="2">Opção 2</mat-radio-button>
+      <mat-radio-button value="3">Opção 3</mat-radio-button>
+    </mat-radio-group>
     <div>
-      <p>
-        into electronic typesetting, <span>remaining</span> essentially
-        unchanged. It was <span>popularised</span> in the 1960s with the release
-        of Letraset in the 1960s with the release of Letraset
-      </p>
-      <mat-radio-group [(ngModel)]="selectedPlan">
-        <mat-radio-button value="1">Opção 1</mat-radio-button>
-        <mat-radio-button value="2">Opção 2</mat-radio-button>
-        <mat-radio-button value="3">Opção 3</mat-radio-button>
-      </mat-radio-group>
+      <p [innerHTML]="plan.describe"></p>
     </div>
     <div class="buttons">
-      <div *ngIf="selectedPlan == '1'">
+      <div *ngIf="plan.selectedPlan == '1'">
         <div>
           <h1>Normal</h1>
           <p>R$</p>
@@ -29,7 +28,7 @@
           <p>Contratar <i class="fas fa-angle-double-right"></i></p>
         </button>
       </div>
-      <div *ngIf="selectedPlan == '2'">
+      <div *ngIf="plan.selectedPlan == '2'">
         <div>
           <h1>Com Ergogênicos</h1>
           <p>R$</p>
@@ -40,7 +39,7 @@
           <p>Contratar <i class="fas fa-angle-double-right"></i></p>
         </button>
       </div>
-      <div *ngIf="selectedPlan == '3'">
+      <div *ngIf="plan.selectedPlan == '3'">
         <div>
           <h1>Com Treino</h1>
           <p>R$</p>

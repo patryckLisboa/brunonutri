@@ -1,3 +1,41 @@
+.start-button-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  backdrop-filter: blur(50px);
+  overflow: hidden;
+}
+
+.start-button {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.5); /* Fundo desfocado */
+  box-shadow: 0 5px 40px 1px #00ff00; /* Sombra inicial */
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.end {
+  animation: fadeOut 1s ease forwards; /* Aplica a animação 'fadeOut' */
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .logo-container {
   position: absolute;
   width: 100%;
@@ -12,31 +50,30 @@
   height: 125px;
 }
 
-// .video-container {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   z-index: -2;
-// }
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
 
-// .background-video {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   min-width: 100%;
-//   min-height: 100%;
-// }
-
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 
 .background-overlay {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, black 20%, #18381a 90%);
-  background-color: rgba(0, 0, 0, 0.5);
+  // background: linear-gradient(to top, black 20%, #18381a 90%);
+  background-color: rgba(0, 24, 1, 0.637);
   z-index: -1;
 }
 
@@ -61,8 +98,8 @@
   top: 180px;
   position: relative;
   background-color: #4caf4fa6;
-  box-shadow: 0 0 50px 5px rgba(0, 255, 0, 0.226); /* Sombra de neon verde */
-  backdrop-filter: blur(5px); 
+  box-shadow: 0 0 50px 20px rgba(0, 255, 0, 0.226); /* Sombra de neon verde */
+  backdrop-filter: blur(5px);
   animation: balanco 3s ease-in-out infinite;
 }
 
@@ -99,7 +136,6 @@
   padding-top: 70px;
 }
 
-
 .clicked-elastic {
   animation: elasticMotion 1s ease-out;
 }
@@ -117,9 +153,9 @@
 
 .speech-bubble {
   width: 85px;
-  background: linear-gradient(to top,#4caf4f2f 10% ,  #17381957 90%);
+  background: linear-gradient(to top, #4caf4f2f 10%, #17381957 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px); 
+  backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid rgba(76, 175, 80, 0.5); /* Adiciona uma borda na lateral esquerda */
   border-left: none; /* Adiciona uma borda na lateral esquerda */
@@ -209,5 +245,15 @@
   }
   100% {
     left: 0; /* Chegando à posição original */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; /* Opacidade inicial do botão (totalmente visível) */
+  }
+  to {
+    opacity: 0; /* Opacidade final do botão (totalmente transparente) */
+    display: none;
   }
 }

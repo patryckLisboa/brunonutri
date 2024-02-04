@@ -1,4 +1,10 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-presentation',
@@ -6,7 +12,19 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./presentation.component.scss'],
 })
 export class PresentationComponent {
-  constructor() {}
+
+  playVideo(
+    buttonElement: HTMLElement,
+    buttonElementContainer: HTMLElement,
+    videoElement: HTMLVideoElement
+  ) {
+    buttonElement.classList.add('clicked-elastic');
+    setTimeout(() => {
+      buttonElement.classList.remove('clicked-elastic');
+      buttonElementContainer.classList.add('end');
+      videoElement.play();
+    }, 500);
+  }
 
   elasticEffect(element: HTMLElement) {
     element.classList.add('clicked-elastic');
