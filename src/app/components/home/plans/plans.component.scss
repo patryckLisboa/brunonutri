@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .green-center-line {
@@ -19,7 +20,9 @@
   background-color: rgba(78, 78, 78, 0.5);
   text-align: center;
 }
-
+p{
+  text-align: left;
+}
 .plan {
   justify-content: space-between;
   display: flex;

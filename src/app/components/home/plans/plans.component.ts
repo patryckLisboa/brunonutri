@@ -12,36 +12,61 @@ export class PlansComponent {
     {
       id: 0,
       selectedPlan: '1',
-      period: 'Consulta',
-      months: null,
+      type: 'Plano Básico',
       normal: 250,
-      valorTreino: 350,
-      valorErgogenico: 450,
-      describe: `Consulta presencial ou a domicílio, com <span>avaliação</span> física e análise geral, prescrição dietética, reeducação alimentar e agendamento de retorno.`,
+      valorTrimestral: 216,
+      valorSemestral: 190,
+      describe: `<ul>
+      <li>Dieta individualizada</li>
+      <li>Avaliação do físico para traçar objetivos</li>
+      <li>Suplementação Personalizada</li>
+      <li>Suporte 24 horas via WhatsApp</li>
+      </ul>`,
     },
     {
       id: 1,
       selectedPlan: '1',
-      period: 'Consultoria Mensal',
-      months: null,
-      normal: 200,
-      valorTreino: 300,
-      valorErgogenico: 400,
-      describe: `Consultoria mensal com acompanhamento <span>individualizado</span> e personalizado via WhatsApp 24h/dia, de segunda a sábado. Incluindo resposta a <span>dúvidas</span> e análise física periódica, presencial ou através de fotos.`,
+      type: 'Plano Plus',
+      normal: 350,
+      valorTrimestral: 316,
+      valorSemestral: 290,
+      describe: `<ul>
+      <li>Dieta individualizada</li>
+      <li>Avaliação do físico para traçar objetivos</li>
+      <li>Suplementação Personalizada</li>
+      <li>Treino individualizado e personalizado</li>
+      <li>Suporte 24 horas via WhatsApp</li>
+      </ul>`,
     },
     {
       id: 2,
       selectedPlan: '1',
-      period: 'Consultoria Trimestral',
-      months: 3,
-      normal: 150,
-      valorTreino: 240,
-      valorErgogenico: 330,
-      describe: `Consultoria trimestral com acompanhamento <span>individualizado</span> e personalizado via WhatsApp 24h/dia, de segunda a sábado. Incluindo resposta a <span>dúvidas</span> e análise física periódica, presencial ou através de fotos.`,
+      type: 'Plano Premium',
+      normal: 450,
+      valorTrimestral: 416,
+      valorSemestral: 390,
+      describe: `<ul>
+      <li>Dieta individualizada</li>
+      <li>Avaliação do físico para traçar objetivos</li>
+      <li>Suplementação Personalizada</li>
+      <li>Treino individualizado e personalizado</li>
+      <li>Elaboração de protocolo de recursos ergogênicos </li>
+      <li>Suporte 24 horas via WhatsApp</li>
+      </ul>`,
     },
   ];
 
   onChangeSelectedPlan(event: MatRadioChange, planId: number) {
     this.plans[planId].selectedPlan = event.value;
+  }
+
+  getTotalPlan(plan: any){
+    if(plan.selectedPlan == '2'){
+      return plan.valorTrimestral * 3
+    }
+    if(plan.selectedPlan == '3'){
+      return plan.valorSemestral * 6
+    }
+    return plan.normal
   }
 }

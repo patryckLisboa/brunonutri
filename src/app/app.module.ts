@@ -16,6 +16,8 @@ import { ProtocolComponent } from './components/home/protocol/protocol.component
 import { PlansComponent } from './components/home/plans/plans.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { PBackgroundComponent } from './shared/components/p-background/p-background.component';
+import { AboutMeComponent } from './components/home/about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { MatRadioModule } from '@angular/material/radio';
     HomeComponent,
     PresentationComponent,
     PNavigationComponent,
+    PBackgroundComponent,
     EvolutionsComponent,
     InformationComponent,
     PCarouselComponent,
     EBookComponent,
     ProtocolComponent,
     PlansComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
