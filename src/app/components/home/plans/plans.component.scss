@@ -19,7 +19,7 @@
   background-color: rgba(78, 78, 78, 0.5);
   text-align: center;
 }
-p{
+p {
   text-align: left;
 }
 .plan {
@@ -42,7 +42,7 @@ p {
   display: inline-block;
 }
 
-.inf{
+.inf {
   font-size: 9pt !important;
 }
 
@@ -67,6 +67,36 @@ p {
 
 ::ng-deep .mdc-label {
   color: #fff;
+}
+
+::ng-deep .mdc-radio__native-control:checked + .mdc-radio__background,
+.mdc-radio__native-control:disabled + .mdc-radio__background {
+  transition: opacity 120ms 0ms cubic-bezier(green),
+    transform 120ms 0ms cubic-bezier(green) !important;
+}
+
+::ng-deep
+  .mat-mdc-radio-button.mat-mdc-radio-checked
+  .mdc-radio__background::before {
+  background-color: green !important;
+}
+
+::ng-deep
+  .mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled:checked
+  + .mdc-radio__background
+  .mdc-radio__outer-circle {
+  border-color: green !important;
+}
+
+::ng-deep
+  .mat-mdc-radio-button
+  .mdc-radio
+  .mdc-radio__native-control:enabled
+  + .mdc-radio__background
+  .mdc-radio__inner-circle {
+  border-color: green !important;
 }
 
 @media (min-width: 750px) {

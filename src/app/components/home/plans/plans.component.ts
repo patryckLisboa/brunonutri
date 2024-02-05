@@ -15,7 +15,7 @@ export class PlansComponent {
       type: 'Plano Básico',
       normal: 250,
       valorTrimestral: 216,
-      valorSemestral: 190,
+      valorSemestral: 180,
       describe: `<ul>
       <li>Dieta individualizada</li>
       <li>Avaliação do físico para traçar objetivos</li>
@@ -29,7 +29,7 @@ export class PlansComponent {
       type: 'Plano Plus',
       normal: 350,
       valorTrimestral: 316,
-      valorSemestral: 290,
+      valorSemestral: 280,
       describe: `<ul>
       <li>Dieta individualizada</li>
       <li>Avaliação do físico para traçar objetivos</li>
@@ -44,7 +44,7 @@ export class PlansComponent {
       type: 'Plano Premium',
       normal: 450,
       valorTrimestral: 416,
-      valorSemestral: 390,
+      valorSemestral: 380,
       describe: `<ul>
       <li>Dieta individualizada</li>
       <li>Avaliação do físico para traçar objetivos</li>
