@@ -8,7 +8,7 @@
 .green-center-line {
   width: 100%;
   height: 1px;
-  background-color: rgba(76, 175, 80, 0.5);
+  background-color: rgba(49, 114, 51, 0.5);
 }
 
 .plan-container {
@@ -16,7 +16,6 @@
   height: 500px;
   width: 300px;
   margin: 10px auto;
-  backdrop-filter: blur(50px);
   background-color: rgba(78, 78, 78, 0.5);
   text-align: center;
 }
@@ -41,6 +40,10 @@ h1 {
 .buttons h2,
 p {
   display: inline-block;
+}
+
+.inf{
+  font-size: 9pt !important;
 }
 
 .title {

@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { PBackgroundComponent } from './shared/components/p-background/p-background.component';
 import { AboutMeComponent } from './components/home/about-me/about-me.component';
+import { FaqComponent } from './components/home/faq/faq.component';
+import { FooterComponent } from './components/home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AboutMeComponent } from './components/home/about-me/about-me.component'
     EBookComponent,
     ProtocolComponent,
     PlansComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    FaqComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
