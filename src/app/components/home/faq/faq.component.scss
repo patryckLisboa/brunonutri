@@ -47,10 +47,11 @@
   margin-bottom: 4px;
 }
 
-mat-icon {
+i {
   border: 1px solid rgba(49, 114, 51, 1);
   border-radius: 50%;
   padding: 10px;
+  font-size: 20px;
 }
 
 .content {
@@ -62,4 +63,12 @@ mat-icon {
 .icon-container {
   width: 100%;
   justify-content: space-evenly;
+}
+
+
+@media (max-width: 750px) {
+  .container {
+    justify-content: space-around;
+    flex-direction: row;
+  }
 }

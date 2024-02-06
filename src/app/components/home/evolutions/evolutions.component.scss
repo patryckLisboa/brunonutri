@@ -1,7 +1,23 @@
 .evolution {
   background-color: black;
   padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.title {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  margin-bottom: 25px;
+  width: 50%;
+  border-bottom: 1px solid #fff;
+}
+
 
 @media (max-width: 750px) {
   .evolution {

@@ -12,14 +12,14 @@
   .background {
     height: 750px !important;
   }
-  .background-container{
+  .background-container {
     height: 770px !important;
   }
-  .speech-bubble-container{
+  .speech-bubble-container {
     row-gap: 20px !important;
   }
-  .protocol{
-    height: 1490px !important;
+  .protocol {
+    height: 1400px !important;
   }
   .one {
     right: 6% !important;
@@ -46,7 +46,7 @@
 .protocol {
   position: relative;
   height: 1750px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .silver-line-container {
@@ -75,7 +75,7 @@
 .title {
   border-bottom: 2px solid silver;
   font-family: Arial, sans-serif;
-  width: 200px;
+  width: 300px;
 }
 
 .title h1 {
@@ -133,12 +133,27 @@
   transform: perspective(1000px);
 }
 
-.speech-bubble-container mat-icon {
+.speech-bubble-container mat-icon,i {
   font-size: 50px;
   height: 100%;
   width: 100%;
-  transform: translateY(13px);
+  transform: translateY(15px);
   color: #4caf50;
+  display: inline;
+}
+
+.icones {
+  display: flex;
+}
+
+.icones .one {
+  position: absolute;
+  left: -25px;
+}
+
+.icones .two {
+  position: absolute;
+  left: 25px;
 }
 
 .rotate {
@@ -197,10 +212,14 @@
 .footer h1 {
   transform: translateY(65px);
   font-size: 34px;
+  width: 60%;
+  padding: 5px;
+  border-bottom: 2px solid rgba(76, 175, 80, 0.5);
 }
+
 .footer p {
   transform: translateY(65px);
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .text-footer {
@@ -218,7 +237,10 @@
   margin-bottom: 10px;
 }
 
-.one,.two,.three,.four {
+.one,
+.two,
+.three,
+.four {
   right: 10%;
   transform-style: preserve-3d;
   animation: rotateY 4s infinite linear;

@@ -20,6 +20,7 @@ import { PBackgroundComponent } from './shared/components/p-background/p-backgro
 import { AboutMeComponent } from './components/home/about-me/about-me.component';
 import { FaqComponent } from './components/home/faq/faq.component';
 import { FooterComponent } from './components/home/footer/footer.component';
+import { DetailsComponent } from './components/home/details/details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FooterComponent } from './components/home/footer/footer.component';
     PlansComponent,
     AboutMeComponent,
     FaqComponent,
-    FooterComponent
+    FooterComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
