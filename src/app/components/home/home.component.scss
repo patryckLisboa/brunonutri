@@ -11,7 +11,7 @@
     position: absolute;
     width: 100%;
     transition: none;
-    margin-top: 640px;
+    margin-top: 78vh;
     z-index: 2;
 }
 
@@ -36,4 +36,12 @@ p {
 
 b{
   font-weight: 500;
+}
+
+
+
+@media (max-width: 750px) {
+  .navigation {
+    margin-top: 65vh;
+  }
 }

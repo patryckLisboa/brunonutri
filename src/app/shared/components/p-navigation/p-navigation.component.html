@@ -1,11 +1,11 @@
 <div class="body">
-  <div class="shadow-container">
+  <!-- <div class="shadow-container">
     <div [ngStyle]="getNavBarStyle('L')"></div>
     <div>
       <div class="nav-button-local"></div>
     </div>
     <div [ngStyle]="getNavBarStyle('R')"></div>
-  </div>
+  </div> -->
   <div class="navigation">
     <ul>
       <li
@@ -18,7 +18,7 @@
             ><mat-icon
               aria-hidden="false"
               aria-label="Example home icon"
-              fontIcon="person"
+              fontIcon="home"
             ></mat-icon>
           </span>
           <p class="text">Início</p>
@@ -37,7 +37,7 @@
               fontIcon="trending_up"
             ></mat-icon
           ></span>
-          <p class="text">Evoluções</p>
+          <p class="text">Resultados</p>
         </a>
       </li>
       <li
@@ -53,7 +53,7 @@
               fontIcon="sms"
             ></mat-icon
           ></span>
-          <p class="text">Como Funciona</p>
+          <p class="text">Como Funciona?</p>
         </a>
       </li>
       <li
@@ -66,13 +66,61 @@
             ><mat-icon
               aria-hidden="false"
               aria-label="Example home icon"
+              fontIcon="done_all"
+            ></mat-icon
+          ></span>
+          <p class="text">Entregas</p>
+        </a>
+      </li>
+      <li
+        class="list"
+        [class.active]="currentIndex === 4"
+        (click)="setActive(4)"
+      >
+        <a>
+          <span class="icon"
+            ><mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
               fontIcon="attach_money"
             ></mat-icon
           ></span>
           <p class="text">Planos</p>
         </a>
       </li>
-      <div class="indicator"></div>
+      <li
+        class="list"
+        [class.active]="currentIndex === 5"
+        (click)="setActive(5)"
+      >
+        <a>
+          <span class="icon"
+            ><mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="person"
+            ></mat-icon
+          ></span>
+          <p class="text">Sobre Mim</p>
+        </a>
+      </li>
+      <li
+        class="list"
+        [class.active]="currentIndex === 6"
+        (click)="setActive(6)"
+      >
+        <a>
+          <span class="icon"
+            ><mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="contact_support"
+            ></mat-icon
+          ></span>
+          <p class="text">FAQ</p>
+        </a>
+      </li>
+      <div class="indicator"><div class="indicator-aux"></div></div>
     </ul>
   </div>
 </div>

@@ -37,6 +37,7 @@
 }
 
 .logo-container {
+  cursor: pointer;
   position: absolute;
   width: 100%;
   overflow: hidden;
@@ -93,7 +94,7 @@
 }
 
 .presentation-panel {
-  height: 700px;
+  height: 83vh;
   overflow: hidden;
 }
 
@@ -160,10 +161,14 @@
     display: block;
   }
   .black-panel {
+    padding-top: 20px;
     display: block;
   }
   .speech-bubble-container {
     left: 10%;
+  }
+  .presentation-panel {
+    height: 70vh;
   }
 }
 

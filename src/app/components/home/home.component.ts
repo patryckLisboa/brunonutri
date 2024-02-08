@@ -14,11 +14,20 @@ export class HomeComponent {
   }
 
   getNavigationClass() {
-     
     if (this.scrollY >= 743) {
-      return "navigation-fixed"
+      return 'navigation-fixed';
     }
-    return "navigation";
+    return 'navigation';
   }
 
+  setScroll(index = 0) {
+    // if (index) {
+    //   return window.scrollTo({ top: window.innerHeight * index, behavior: 'smooth' });
+    // }
+    // if (index === 3) {
+    //   return window.scrollTo({ top: window.innerHeight * (index + 2), behavior: 'smooth' });
+    // }
+
+    return window.scrollTo({ top: window.innerHeight * index, behavior: 'smooth' });
+  }
 }

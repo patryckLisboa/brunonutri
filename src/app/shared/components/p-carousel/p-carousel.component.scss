@@ -91,17 +91,15 @@
   }
   .swiper-button-next,
   .swiper-button-prev {
-    background-color: black;
+    background-color: rgba(76, 175, 80, 0.5);
     width: 40px;
-    color: #fff;
+    color: white;
     height: 40px;
     border-radius: 100%;
     opacity: 50%;
   }
-  .swiper-pagination-bullet-active {
-    background-color: white;
-  }
   .swiper-pagination-bullet {
+    background-color: green;
     width: 10px;
     height: 10px;
   }
