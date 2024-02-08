@@ -8,33 +8,6 @@
   overflow: hidden;
 }
 
-@media (max-width: 750px) {
-  .background {
-    height: 750px !important;
-  }
-  .background-container {
-    height: 770px !important;
-  }
-  .speech-bubble-container {
-    row-gap: 20px !important;
-  }
-  .protocol {
-    height: 1430px !important;
-  }
-  .one {
-    right: 6% !important;
-  }
-  .two {
-    right: 12% !important;
-  }
-  .three {
-    right: 23% !important;
-  }
-  .four {
-    right: 40% !important;
-  }
-}
-
 .background {
   position: relative;
   border-bottom-right-radius: 300px;
@@ -133,7 +106,8 @@
   transform: perspective(1000px);
 }
 
-.speech-bubble-container mat-icon,i {
+.speech-bubble-container mat-icon,
+i {
   font-size: 50px;
   height: 100%;
   width: 100%;
@@ -241,7 +215,7 @@
 .two,
 .three,
 .four {
-  right: 10%;
+  right: 5%;
   transform-style: preserve-3d;
   animation: rotateY 4s infinite linear;
 }
@@ -271,5 +245,70 @@
   }
   50% {
     box-shadow: 15px -20px 20px -40px rgba(76, 175, 80, 0.5);
+  }
+}
+
+@media (max-width: 750px) {
+  .background {
+    height: 750px !important;
+  }
+  .background-container {
+    height: 770px !important;
+  }
+  .speech-bubble-container {
+    row-gap: 20px !important;
+  }
+  .protocol {
+    height: 1480px !important;
+  }
+  .one {
+    right: 6% !important;
+  }
+  .two {
+    right: 12% !important;
+  }
+  .three {
+    right: 23% !important;
+  }
+  .four {
+    right: 40% !important;
+  }
+}
+
+@media (max-width: 750px) {
+  .background {
+    height: 750px !important;
+  }
+  .background-container {
+    height: 770px !important;
+  }
+  .speech-bubble-container {
+    row-gap: 20px !important;
+  }
+  .protocol {
+    height: 1480px !important;
+  }
+  .one {
+    right: 6% !important;
+  }
+  .two {
+    right: 12% !important;
+  }
+  .three {
+    right: 23% !important;
+  }
+  .four {
+    right: 40% !important;
+  }
+}
+
+@media (min-width: 1150px) {
+  .one,
+  .two,
+  .three,
+  .four {
+    right: 40%;
+    transform-style: preserve-3d;
+    animation: rotateY 4s infinite linear;
   }
 }
