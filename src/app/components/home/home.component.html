@@ -1,13 +1,17 @@
-<div  [ngClass]="getNavigationClass()">
-  <app-p-navigation class="p-navigation" (indexButton)="setScroll($event)"></app-p-navigation>
+<div [ngClass]="getNavigationClass()">
+  <app-p-navigation
+    class="p-navigation"
+    (indexButton)="setScroll($event)"
+    [buttonPosition]="buttonPosition"
+  ></app-p-navigation>
 </div>
 <div class="navigation-aux" [hidden]="scrollY <= 743"></div>
 <app-presentation></app-presentation>
-<app-evolutions></app-evolutions>
-<app-information></app-information>
+<app-evolutions id="navEvolutions"></app-evolutions>
+<app-information id="navInformations"></app-information>
 <app-details></app-details>
-<app-protocol></app-protocol>
-<app-plans></app-plans>
-<app-about-me></app-about-me>
-<app-faq></app-faq>
+<app-protocol id="navProtocol"></app-protocol>
+<app-plans id="navPlans"></app-plans>
+<app-about-me id="navAboutMe"></app-about-me>
+<app-faq id="navFaq"></app-faq>
 <app-footer></app-footer>

@@ -6,7 +6,7 @@
 }
 
 .body {
-  height: 120px;
+  height: 150px;
   width: 100%;
   position: absolute;
   z-index: 3;
@@ -80,6 +80,7 @@
 
 .navigation ul li.active a .text {
   opacity: 1;
+  transform: translateY(13px);
 }
 
 .indicator {

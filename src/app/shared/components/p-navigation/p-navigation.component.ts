@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-p-navigation',
@@ -8,6 +8,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class PNavigationComponent {
   currentIndex: number = 0;
   @Output() indexButton = new EventEmitter();
+  @Input() set buttonPosition(value: number) {
+    if(value)
+    this.setActive(value);
+  }
+
 
   setActive(index: number) {
     this.currentIndex = index;
