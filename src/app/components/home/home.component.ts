@@ -7,15 +7,17 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 })
 export class HomeComponent {
   scrollY = 0;
-  presentationHeight = 743;
+  isMobile = window.innerWidth < 750;
+  navigationClass = 'navigation';
+  footerHeight = 500;
   buttonPosition: any = 0;
   observers: any[] = [];
+  footerObserver:any = null;
   stoppedScrolling = false;
   constructor(private elementRef: ElementRef) {}
 
   @HostListener('window:scroll', [])
   onScroll() {
-    // const isMobile = window.innerWidth < 750;
     // const navPositions: any = {
     //   0: 0,
     //   1: this.getHeightElement('#navEvolutions') - (isMobile ? 90 : 0),
@@ -31,9 +33,9 @@ export class HomeComponent {
 
   ngAfterViewInit() {
     const element = this.elementRef.nativeElement.querySelector(
-      '#heightPresentation'
+      '#footerId'
     );
-    this.presentationHeight = element.offsetTop - 10;
+    this.footerHeight = element.offsetTop;
 
     this.initReativeSelection();
   }
@@ -47,9 +49,10 @@ export class HomeComponent {
   }
 
   initReativeSelection() {
+    
     const elementsList = [
-      this.elementRef.nativeElement.querySelector('#navResponsiveHome'),
-      this.elementRef.nativeElement.querySelector('#navResponsiveEvolutions'),
+      this.elementRef.nativeElement.querySelector(this.isMobile ? '#navResponsiveHome' : '#descNavResponsiveHome'),
+      this.elementRef.nativeElement.querySelector(this.isMobile ? '#navResponsiveEvolutions' : '#descNavResponsiveEvolutions'),
       this.elementRef.nativeElement.querySelector('#navResponsiveInformations'),
       this.elementRef.nativeElement.querySelector('#navResponsiveProtocol'),
       this.elementRef.nativeElement.querySelector('#navResponsivePlans'),
@@ -61,7 +64,6 @@ export class HomeComponent {
         new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              console.log(entry, i, this.stoppedScrolling);
               if (!this.stoppedScrolling) {
                 this.buttonPosition = i;
               }
@@ -71,61 +73,63 @@ export class HomeComponent {
       );
       this.observers[i].observe(element);
     });
-  }
+    const elementFooter = this.elementRef.nativeElement.querySelector('#footerId')
+    this.footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.navigationClass = 'navigation navigation-fixed'
+        }else{
+          this.navigationClass = 'navigation'
 
-  getNavigationClass() {
-    if (this.scrollY >= this.presentationHeight) {
-      return 'navigation navigation-fixed';
-    }
-    return 'navigation';
+        }
+      });
+    });
+    this.footerObserver.observe(elementFooter);
   }
-
-  // elasticEffect(element: HTMLElement) {
-  //   element.classList.add('clicked-elastic');
-  //   setTimeout(() => {
-  //     element.classList.remove('clicked-elastic');
-  //   }, 1000);
-  // }
 
   getHeightElement(elementId = '') {
     const element = this.elementRef.nativeElement.querySelector(elementId);
     return element.offsetTop;
   }
+
+  getNavigationClass(){
+    return this.navigationClass;
+  }
+
   setScroll(index = 0) {
-    const isMobile = window.innerWidth < 750;
     if (index == 1) {
       return window.scrollTo({
-        top: this.getHeightElement('#navEvolutions') - (isMobile ? 90 : 0),
+        top: this.getHeightElement('#navEvolutions') + 20,
         behavior: 'smooth',
       });
     }
     if (index == 2) {
       return window.scrollTo({
-        top: this.getHeightElement('#navInformations') - (isMobile ? 135 : 145),
+        top: this.getHeightElement('#navInformations') + 30,
         behavior: 'smooth',
       });
     }
     if (index == 3) {
       return window.scrollTo({
-        top: this.getHeightElement('#navProtocol') - (isMobile ? 110 : 120),
+        top: this.getHeightElement('#navProtocol'),
         behavior: 'smooth',
       });
     }
     if (index == 4) {
       return window.scrollTo({
-        top: this.getHeightElement('#navPlans') - (isMobile ? 105 : 120),
+        top: this.getHeightElement('#navPlans'),
         behavior: 'smooth',
       });
     }
     if (index == 5) {
       return window.scrollTo({
-        top: this.getHeightElement('#navAboutMe') - (isMobile ? 108 : 25),
+        top: this.getHeightElement('#navAboutMe'),
         behavior: 'smooth',
       });
     }
     if (index == 6) {
       return window.scrollTo({
-        top: this.getHeightElement('#navFaq') - (isMobile ? 70 : 85),
+        top: this.getHeightElement('#navFaq'),
         behavior: 'smooth',
       });
     }

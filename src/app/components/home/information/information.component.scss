@@ -127,7 +127,9 @@
       width: 50%;
     }
     img {
+      height: 700px;
       right: -100px;
+      transform: translateY(-100px);
     }
     .img-container {
       margin-top: 50px;
@@ -186,6 +188,7 @@
     }
     img {
       height: 800px;
+      transform: translateY(-50px);
       left: -50px;
     }
     .green-line {

@@ -1,16 +1,8 @@
 .navigation {
-  position: absolute;
-  width: 100%;
-  transition: 1s !important;
-  margin-top: 78vh;
-  z-index: 2;
-}
-
-.navigation-fixed {
   position: fixed;
-  transition: 1s !important;
-  animation: showNav .4s ease-out; /* Ajuste a duração conforme necessário */
-  bottom: 120px;
+  width: 100%;
+  margin-top: 86vh;
+  z-index: 2;
 }
 
 @keyframes showNav {
@@ -38,6 +30,33 @@ b {
 
 @media (max-width: 750px) {
   .navigation {
-    margin-top: 65vh;
+    margin-top: 87.5vh;
+    animation: toFixed 1ms ease-in-out;
+    animation-timeline: view();
+  }
+
+  .navigation-fixed {
+    position: fixed;
+    // transition: 1s !important;
+    // animation: showNav .4s ease-out; /* Ajuste a duração conforme necessário */
+    margin-top: 68.5vh;
+  }
+  
+  @keyframes toFixed {
+    from{
+      margin-top: 65vh;
+    }
+    to{
+      margin-top: 87.5vh;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .navigation-fixed {
+    position: fixed;
+    // transition: 1s !important;
+    // animation: showNav .4s ease-out; /* Ajuste a duração conforme necessário */
+    margin-top: 77vh;
   }
 }
