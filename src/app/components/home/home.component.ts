@@ -6,9 +6,11 @@ import { Component, ElementRef, HostListener } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  scrollY = 0; // Ajuste a altura limite conforme necessário
+  scrollY = 0;
   presentationHeight = 743;
   buttonPosition: any = 0;
+  observers: any[] = [];
+  stoppedScrolling = false;
   constructor(private elementRef: ElementRef) {}
 
   @HostListener('window:scroll', [])
@@ -25,11 +27,6 @@ export class HomeComponent {
     // };
 
     this.scrollY = window.scrollY;
-    // let indexButton: any = 0;
-    // this.scrollY <
-    // this.getHeightElement('#navInformations') - (isMobile ? 135 : 145)
-    //   ? this.buttonPosition = 2
-    //   : 0;
   }
 
   ngAfterViewInit() {
@@ -37,14 +34,58 @@ export class HomeComponent {
       '#heightPresentation'
     );
     this.presentationHeight = element.offsetTop - 10;
+
+    this.initReativeSelection();
+  }
+
+  ngOnDestroy(): void {
+    this.observers.forEach((element) => element.disconnect());
+  }
+
+  activatedScroll(value = false){
+    this.stoppedScrolling = value;
+  }
+
+  initReativeSelection() {
+    const elementsList = [
+      this.elementRef.nativeElement.querySelector('#navResponsiveHome'),
+      this.elementRef.nativeElement.querySelector('#navResponsiveEvolutions'),
+      this.elementRef.nativeElement.querySelector('#navResponsiveInformations'),
+      this.elementRef.nativeElement.querySelector('#navResponsiveProtocol'),
+      this.elementRef.nativeElement.querySelector('#navResponsivePlans'),
+      this.elementRef.nativeElement.querySelector('#navResponsiveAboutMe'),
+      this.elementRef.nativeElement.querySelector('#navResponsiveFaq'),
+    ];
+    elementsList.forEach((element, i) => {
+      this.observers.push(
+        new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log(entry, i, this.stoppedScrolling);
+              if (!this.stoppedScrolling) {
+                this.buttonPosition = i;
+              }
+            }
+          });
+        })
+      );
+      this.observers[i].observe(element);
+    });
   }
 
   getNavigationClass() {
     if (this.scrollY >= this.presentationHeight) {
-      return 'navigation-fixed';
+      return 'navigation navigation-fixed';
     }
     return 'navigation';
   }
+
+  // elasticEffect(element: HTMLElement) {
+  //   element.classList.add('clicked-elastic');
+  //   setTimeout(() => {
+  //     element.classList.remove('clicked-elastic');
+  //   }, 1000);
+  // }
 
   getHeightElement(elementId = '') {
     const element = this.elementRef.nativeElement.querySelector(elementId);
@@ -78,7 +119,7 @@ export class HomeComponent {
     }
     if (index == 5) {
       return window.scrollTo({
-        top: this.getHeightElement('#navAboutMe') - (isMobile ? 63 : 25),
+        top: this.getHeightElement('#navAboutMe') - (isMobile ? 108 : 25),
         behavior: 'smooth',
       });
     }

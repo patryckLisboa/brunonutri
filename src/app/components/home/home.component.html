@@ -1,11 +1,11 @@
 <div [ngClass]="getNavigationClass()">
   <app-p-navigation
+    (activatedScroll)="activatedScroll($event)"
     class="p-navigation"
     (indexButton)="setScroll($event)"
     [buttonPosition]="buttonPosition"
   ></app-p-navigation>
 </div>
-<div class="navigation-aux" [hidden]="scrollY <= 743"></div>
 <app-presentation></app-presentation>
 <app-evolutions id="navEvolutions"></app-evolutions>
 <app-information id="navInformations"></app-information>

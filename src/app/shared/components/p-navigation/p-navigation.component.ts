@@ -7,22 +7,21 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PNavigationComponent {
   currentIndex: number = 0;
+  isCrolling = false;
+
+  @Output() activatedScroll = new EventEmitter();
   @Output() indexButton = new EventEmitter();
   @Input() set buttonPosition(value: number) {
-    if(value)
-    this.setActive(value);
+    this.currentIndex = value;
   }
 
-
   setActive(index: number) {
+    this.activeScroll();
     this.currentIndex = index;
     this.indexButton.emit(index);
   }
 
-  getNavBarStyle(side: string) {
-    const initNumber = window.innerWidth < 750 ? 175 : 160;
-    const widthButton = window.innerWidth < 750 ? 58 : 107;
-  
+  getNavBarStyle() {
     return {
       backgroundColor: 'black',
       borderTopRightRadius: '100px',
@@ -30,5 +29,16 @@ export class PNavigationComponent {
       height: '30px',
       width: '100%',
     };
+  }
+
+  activeScroll() {
+    if (!this.isCrolling) {
+      this.isCrolling = true;
+      this.activatedScroll.emit(true);
+      setTimeout(() => {
+        this.activatedScroll.emit(false);
+        this.isCrolling = false;
+      }, 1500);
+    }
   }
 }
