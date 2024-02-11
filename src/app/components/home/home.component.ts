@@ -9,10 +9,10 @@ export class HomeComponent {
   scrollY = 0;
   isMobile = window.innerWidth < 750;
   navigationClass = 'navigation';
-  footerHeight = 500;
   buttonPosition: any = 0;
-  observers: any[] = [];
-  footerObserver:any = null;
+  navObservers: any[] = [];
+  topObserver: any = null;
+  footerObserver: any = null;
   stoppedScrolling = false;
   constructor(private elementRef: ElementRef) {}
 
@@ -32,27 +32,66 @@ export class HomeComponent {
   }
 
   ngAfterViewInit() {
-    const element = this.elementRef.nativeElement.querySelector(
-      '#footerId'
-    );
-    this.footerHeight = element.offsetTop;
-
-    this.initReativeSelection();
+    this.initReativeNavigation();
   }
 
   ngOnDestroy(): void {
-    this.observers.forEach((element) => element.disconnect());
+    this.navObservers.forEach((element) => element.disconnect());
+    this.topObserver.disconnect();
+    this.footerObserver.disconnect();
   }
 
-  activatedScroll(value = false){
+  activatedScroll(value = false) {
     this.stoppedScrolling = value;
   }
 
-  initReativeSelection() {
-    
+  initReativeNavigation() {
+    this.initNavigationOptions();
+    this.initNavigationTop();
+    this.initNavigationBottom();
+  }
+
+  initNavigationBottom() {
+    const elementFooter =
+      this.elementRef.nativeElement.querySelector('#footerId');
+    this.footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.navigationClass = 'navigation navigation-footer-fixed';
+        } else {
+          this.navigationClass = 'navigation navigation-fixed';
+        }
+      });
+    });
+    this.footerObserver.observe(elementFooter);
+  }
+
+  initNavigationTop() {
+    const elementTop = this.elementRef.nativeElement.querySelector(
+      '#descNavResponsiveHome'
+    );
+    this.topObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.navigationClass = 'navigation';
+        } else {
+          this.navigationClass = 'navigation navigation-fixed';
+        }
+      });
+    });
+    this.topObserver.observe(elementTop);
+  }
+
+  initNavigationOptions() {
     const elementsList = [
-      this.elementRef.nativeElement.querySelector(this.isMobile ? '#navResponsiveHome' : '#descNavResponsiveHome'),
-      this.elementRef.nativeElement.querySelector(this.isMobile ? '#navResponsiveEvolutions' : '#descNavResponsiveEvolutions'),
+      this.elementRef.nativeElement.querySelector(
+        this.isMobile ? '#navResponsiveHome' : '#descNavResponsiveHome'
+      ),
+      this.elementRef.nativeElement.querySelector(
+        this.isMobile
+          ? '#navResponsiveEvolutions'
+          : '#descNavResponsiveEvolutions'
+      ),
       this.elementRef.nativeElement.querySelector('#navResponsiveInformations'),
       this.elementRef.nativeElement.querySelector('#navResponsiveProtocol'),
       this.elementRef.nativeElement.querySelector('#navResponsivePlans'),
@@ -60,7 +99,7 @@ export class HomeComponent {
       this.elementRef.nativeElement.querySelector('#navResponsiveFaq'),
     ];
     elementsList.forEach((element, i) => {
-      this.observers.push(
+      this.navObservers.push(
         new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -71,20 +110,8 @@ export class HomeComponent {
           });
         })
       );
-      this.observers[i].observe(element);
+      this.navObservers[i].observe(element);
     });
-    const elementFooter = this.elementRef.nativeElement.querySelector('#footerId')
-    this.footerObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.navigationClass = 'navigation navigation-fixed'
-        }else{
-          this.navigationClass = 'navigation'
-
-        }
-      });
-    });
-    this.footerObserver.observe(elementFooter);
   }
 
   getHeightElement(elementId = '') {
@@ -92,7 +119,7 @@ export class HomeComponent {
     return element.offsetTop;
   }
 
-  getNavigationClass(){
+  getNavigationClass() {
     return this.navigationClass;
   }
 
