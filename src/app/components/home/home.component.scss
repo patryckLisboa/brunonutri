@@ -27,11 +27,11 @@ b {
   .navigation {
     top: 70vh;
     position: absolute;
-    animation: appearRevert 1s ease-in-out;
+    animation: appearRevert .5s ease-in-out;
   }
   .navigation-fixed {
     opacity: 0;
-    transform: translateY(50vw);
+    transform: translateY(10vw);
   }
   .appear {
     position: fixed;
@@ -43,7 +43,7 @@ b {
   @keyframes appearRevert {
     from {
       opacity: 0;
-      transform: translateY(50vw);
+      transform: translateY(10vw);
     }
     to {
       opacity: 1;
@@ -54,7 +54,7 @@ b {
   @keyframes appear {
     from {
       opacity: 0;
-      transform: translateY(-50vw);
+      transform: translateY(-10vw);
     }
     to {
       opacity: 1;
