@@ -13,6 +13,7 @@ export class HomeComponent {
   navObservers: any[] = [];
   topObserver: any = null;
   footerObserver: any = null;
+  openingObserver: any = null;
   stoppedScrolling = false;
   constructor(private elementRef: ElementRef) {}
 
@@ -40,13 +41,13 @@ export class HomeComponent {
         // behavior: 'smooth'
       });
     }, 500);
-
   }
 
   ngOnDestroy(): void {
     this.navObservers.forEach((element) => element.disconnect());
     this.topObserver.disconnect();
     this.footerObserver.disconnect();
+    this.openingObserver.disconnect();
   }
 
   activatedScroll(value = false) {
@@ -57,6 +58,20 @@ export class HomeComponent {
     this.initNavigationOptions();
     this.initNavigationTop();
     this.initNavigationBottom();
+    this.openingObserver = new IntersectionObserver((entries) =>
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show')
+        }else{
+          entry.target.classList.remove('show')
+        }
+      })
+    );
+    const elements = this.elementRef.nativeElement.querySelectorAll('.hidden');
+
+    elements.forEach((element: any) => {
+      this.openingObserver.observe(element);
+    });
   }
 
   initNavigationBottom() {

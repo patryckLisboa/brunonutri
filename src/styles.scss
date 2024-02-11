@@ -41,3 +41,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .button:hover {
   background-color: #367c3d; /* Cor mais escura no hover */
 }
+
+
+.hidden {
+  transform: translateX(-50vw);
+}
+
+.show {
+  transform: translateX(0);
+}
