@@ -11,7 +11,6 @@ import { EvolutionsComponent } from './components/home/evolutions/evolutions.com
 import { InformationComponent } from './components/home/information/information.component';
 import { PCarouselComponent } from './shared/components/p-carousel/p-carousel.component';
 import { SwiperModule } from 'swiper/angular';
-import { EBookComponent } from './components/e-book/e-book.component';
 import { ProtocolComponent } from './components/home/protocol/protocol.component';
 import { PlansComponent } from './components/home/plans/plans.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,7 +31,6 @@ import { DetailsComponent } from './components/home/details/details.component';
     EvolutionsComponent,
     InformationComponent,
     PCarouselComponent,
-    EBookComponent,
     ProtocolComponent,
     PlansComponent,
     AboutMeComponent,

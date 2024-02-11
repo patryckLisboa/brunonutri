@@ -33,6 +33,14 @@ export class HomeComponent {
 
   ngAfterViewInit() {
     this.initReativeNavigation();
+    // this.navigationClass = 'navigation appear'
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        // behavior: 'smooth'
+      });
+    }, 500);
+
   }
 
   ngOnDestroy(): void {
@@ -57,9 +65,9 @@ export class HomeComponent {
     this.footerObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          this.navigationClass = 'navigation navigation-footer-fixed';
+          this.navigationClass = 'navigation appear navigation-footer-fixed';
         } else {
-          this.navigationClass = 'navigation navigation-fixed';
+          this.navigationClass = 'navigation appear ';
         }
       });
     });
@@ -76,6 +84,9 @@ export class HomeComponent {
           this.navigationClass = 'navigation';
         } else {
           this.navigationClass = 'navigation navigation-fixed';
+          setTimeout(() => {
+            this.navigationClass = 'navigation appear';
+          });
         }
       });
     });
