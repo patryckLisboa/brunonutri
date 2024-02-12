@@ -35,21 +35,15 @@ export class HomeComponent {
     this.disconnectObservers();
   }
 
-  disconnectObservers(onlyHiddens = false) {
-    if (onlyHiddens) {
-      if (this.openingObserver) {
-        this.openingObserver.disconnect();
-        this.openingObserver = null;
-      }
-      if (this.openingRightObserver) {
-        this.openingRightObserver.disconnect();
-        this.openingRightObserver = null;
-      }
-      return;
+  disconnectObservers() {
+    if (this.openingObserver) {
+      this.openingObserver.disconnect();
+    }
+    if (this.openingRightObserver) {
+      this.openingRightObserver.disconnect();
     }
     this.navObservers.forEach((element) => {
       if (element) {
-        console.log('teste');
         element.disconnect();
       }
     });
@@ -60,6 +54,7 @@ export class HomeComponent {
       this.footerObserver.disconnect();
     }
   }
+
   activatedScroll(value = false) {
     this.stoppedScrolling = value;
   }
@@ -74,7 +69,6 @@ export class HomeComponent {
   initHiddenAnimations() {
     this.openingObserver = new IntersectionObserver(
       (entries) => {
-        console.log(entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
@@ -112,7 +106,7 @@ export class HomeComponent {
     this.footerObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const newClass = entry.isIntersecting
-          ? 'navigation appear navigation-footer-fixed'
+          ? 'navigation appear navigation-footer-transition'
           : 'navigation appear';
         if (this.navigationClass !== newClass) {
           this.navigationClass = newClass;
@@ -123,23 +117,16 @@ export class HomeComponent {
   }
 
   initNavigationTop() {
-    const elementTop = this.elementRef.nativeElement.querySelector(
-      '#descNavResponsiveHome'
-    );
+    const elementTop =
+      this.elementRef.nativeElement.querySelector('.logo-container');
     this.topObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const newClass = entry.isIntersecting
-          ? 'navigation'
-          : 'navigation navigation-fixed';
-        if (this.navigationClass !== newClass) {
-          this.navigationClass = newClass;
-          if (!entry.isIntersecting) {
-            setTimeout(() => {
-              if (this.navigationClass === 'navigation navigation-fixed') {
-                this.navigationClass = 'navigation appear';
-              }
-            });
-          }
+        this.navigationClass = 'navigation';
+        if (!entry.isIntersecting) {
+          this.navigationClass = 'navigation navigation-transition';
+          setTimeout(() => {
+            this.navigationClass = 'navigation appear';
+          }, 300);
         }
       });
     });
