@@ -58,7 +58,7 @@
 }
 
 .navigation ul li.active a .icon {
-  transform: translateY((-40px));
+  transform: translateY((-52px));
 }
 
 .navigation ul li a .text {
@@ -168,6 +168,10 @@
 }
 
 @media (max-width: 750px) {
+  .navigation ul li.active a .icon {
+    transform: translateY((-40px));
+  }
+
   .navigation ul li {
     width: 45px;
   }
