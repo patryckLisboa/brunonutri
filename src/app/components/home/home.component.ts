@@ -17,6 +17,13 @@ export class HomeComponent {
   stoppedScrolling = false;
   constructor(private elementRef: ElementRef) {}
 
+  @HostListener('window:resize')
+  onResize() {
+    const isMobile = window.innerHeight < 750;
+    !isMobile ? this.disconnectObservers(true) : this.initHiddenAnimations();
+    this.isMobile = isMobile;
+  }
+
   ngAfterViewInit() {
     this.initReativeNavigation();
     setTimeout(() => {
@@ -27,13 +34,34 @@ export class HomeComponent {
   }
 
   ngOnDestroy(): void {
-    this.navObservers.forEach((element) => element.disconnect());
-    this.topObserver.disconnect();
-    this.footerObserver.disconnect();
-    this.openingObserver.disconnect();
-    this.openingRightObserver.disconnect();
+    this.disconnectObservers();
   }
 
+  disconnectObservers(onlyHiddens = false) {
+    if (onlyHiddens) {
+      if (this.openingObserver) {
+        this.openingObserver.disconnect();
+        this.openingObserver = null
+      }
+      if (this.openingRightObserver) {
+        this.openingRightObserver.disconnect();
+        this.openingRightObserver = null
+      }
+      return;
+    }
+    this.navObservers.forEach((element) => {
+      if (element) {
+        console.log('teste');
+        element.disconnect();
+      }
+    });
+    if (this.topObserver) {
+      this.topObserver.disconnect();
+    }
+    if (this.footerObserver) {
+      this.footerObserver.disconnect();
+    }
+  }
   activatedScroll(value = false) {
     this.stoppedScrolling = value;
   }
@@ -42,21 +70,33 @@ export class HomeComponent {
     this.initNavigationOptions();
     this.initNavigationTop();
     this.initNavigationBottom();
+    if (this.isMobile) this.initHiddenAnimations();
+  }
+
+  initHiddenAnimations() {
     this.openingObserver = new IntersectionObserver((entries) =>
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          if (!entry.target.classList.contains('show')) {
+            entry.target.classList.add('show');
+          }
         } else {
-          entry.target.classList.remove('show');
+          if (entry.target.classList.contains('show')) {
+            entry.target.classList.remove('show');
+          }
         }
       })
     );
     this.openingRightObserver = new IntersectionObserver((entries) =>
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show-right');
+          if (!entry.target.classList.contains('show-right')) {
+            entry.target.classList.add('show-right');
+          }
         } else {
-          entry.target.classList.remove('show-right');
+          if (entry.target.classList.contains('show-right')) {
+            entry.target.classList.remove('show-right');
+          }
         }
       })
     );
@@ -77,10 +117,11 @@ export class HomeComponent {
       this.elementRef.nativeElement.querySelector('#footerId');
     this.footerObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.navigationClass = 'navigation appear navigation-footer-fixed';
-        } else {
-          this.navigationClass = 'navigation appear ';
+        const newClass = entry.isIntersecting
+          ? 'navigation appear navigation-footer-fixed'
+          : 'navigation appear';
+        if (this.navigationClass !== newClass) {
+          this.navigationClass = newClass;
         }
       });
     });
@@ -93,13 +134,18 @@ export class HomeComponent {
     );
     this.topObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.navigationClass = 'navigation';
-        } else {
-          this.navigationClass = 'navigation navigation-fixed';
-          setTimeout(() => {
-            this.navigationClass = 'navigation appear';
-          });
+        const newClass = entry.isIntersecting
+          ? 'navigation'
+          : 'navigation navigation-fixed';
+        if (this.navigationClass !== newClass) {
+          this.navigationClass = newClass;
+          if (!entry.isIntersecting) {
+            setTimeout(() => {
+              if (this.navigationClass === 'navigation navigation-fixed') {
+                this.navigationClass = 'navigation appear';
+              }
+            });
+          }
         }
       });
     });
