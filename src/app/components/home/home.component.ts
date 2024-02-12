@@ -6,7 +6,6 @@ import { Component, ElementRef, HostListener } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  scrollY = 0;
   isMobile = window.innerWidth < 750;
   navigationClass = 'navigation';
   buttonPosition: any = 0;
@@ -18,28 +17,11 @@ export class HomeComponent {
   stoppedScrolling = false;
   constructor(private elementRef: ElementRef) {}
 
-  @HostListener('window:scroll', [])
-  onScroll() {
-    // const navPositions: any = {
-    //   0: 0,
-    //   1: this.getHeightElement('#navEvolutions') - (isMobile ? 90 : 0),
-    //   2: this.getHeightElement('#navInformations') - (isMobile ? 135 : 145),
-    //   3: this.getHeightElement('#navProtocol') - (isMobile ? 110 : 120),
-    //   4: this.getHeightElement('#navPlans') - (isMobile ? 105 : 120),
-    //   5: this.getHeightElement('#navAboutMe') - (isMobile ? 63 : 25),
-    //   6: this.getHeightElement('#navFaq') - (isMobile ? 70 : 85),
-    // };
-
-    this.scrollY = window.scrollY;
-  }
-
   ngAfterViewInit() {
     this.initReativeNavigation();
-    // this.navigationClass = 'navigation appear'
     setTimeout(() => {
       window.scrollTo({
         top: 0,
-        // behavior: 'smooth'
       });
     }, 500);
   }
