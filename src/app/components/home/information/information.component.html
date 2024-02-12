@@ -1,4 +1,4 @@
-<div class="green-center-container"  id="descNavResponsiveEvolutions">
+<div class="green-center-container" id="descNavResponsiveEvolutions">
   <div class="green-center-line"></div>
   <div>
     <div class="green-center-circle">
@@ -24,11 +24,11 @@
         </div>
         <div
           *ngFor="let mensagem of mensagensPassoAPasso"
-          class="neon"
+          class="neon hidden"
           #speechBubble
           (click)="elasticEffect(speechBubble)"
         >
-          <div class="hidden">
+          <div>
             <div class="icon-container">
               <mat-icon [fontIcon]="getNeonIcon(mensagem)"></mat-icon>
             </div>
@@ -65,7 +65,7 @@
         </div>
         <div
           *ngFor="let mensagem of mensagensParaQuem"
-          class="neon"
+          class="neon hidden-right"
           #speechBubble
           (click)="elasticEffect(speechBubble)"
         >

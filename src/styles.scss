@@ -21,11 +21,17 @@ body {
   background-color: transparent; /* Cor do "polegar" (barra de rolagem) */
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 * {
-  transition: 0.5s ;
+  transition: 0.5s;
 }
 
 .button {
@@ -42,11 +48,90 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: #367c3d; /* Cor mais escura no hover */
 }
 
-
 .hidden {
-  transform: translateX(-50vw);
+  animation: left-desaparecer 1s ease-out;
 }
 
 .show {
-  transform: translateX(0);
+  animation: left-appear 1s ease-out;
+}
+
+.clicked-elastic {
+  animation: elasticMotion 1s ease-out;
+}
+
+
+@keyframes elasticMotion {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(2px) scaleY(1.1);
+  }
+  30% {
+    transform: translateX(-2px) scaleY(0.9);
+  }
+  50% {
+    transform: translateX(1px) scaleY(1.05);
+  }
+  70% {
+    transform: translateX(-1px) scaleY(0.95);
+  }
+  90% {
+    transform: translateX(0.5px) scaleY(1);
+  }
+}
+
+
+@keyframes left-appear {
+  from {
+    opacity: 0;
+    transform: translateX(-70vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes left-desaparecer {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-70vw);
+  }
+}
+
+.hidden-right {
+  animation: right-desaparecer 1s ease-out;
+}
+
+.show-right {
+  animation: right-appear 1s ease-out;
+}
+
+@keyframes right-appear {
+  from {
+    opacity: 0;
+    transform: translateX(70vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes right-desaparecer {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(70vw);
+  }
 }

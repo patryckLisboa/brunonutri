@@ -118,9 +118,6 @@
   padding-top: 70px;
 }
 
-.clicked-elastic {
-  animation: elasticMotion 1s ease-out;
-}
 
 .rows {
   display: flex;
@@ -178,28 +175,6 @@
   }
 }
 
-@keyframes elasticMotion {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  10% {
-    transform: translateX(2px) scaleY(1.1);
-  }
-  30% {
-    transform: translateX(-2px) scaleY(0.9);
-  }
-  50% {
-    transform: translateX(1px) scaleY(1.05);
-  }
-  70% {
-    transform: translateX(-1px) scaleY(0.95);
-  }
-  90% {
-    transform: translateX(0.5px) scaleY(1);
-  }
-}
-
 @keyframes floatAnimation {
   0%,
   100% {
@@ -248,19 +223,4 @@
     opacity: 0; /* Opacidade final do botão (totalmente transparente) */
     display: none;
   }
-}
-
-@keyframes left-appear {
-  from {
-    opacity: 0;
-    transform: translateX(-200vw);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.left-appear {
-  animation: left-appear 1s ease-out;
 }

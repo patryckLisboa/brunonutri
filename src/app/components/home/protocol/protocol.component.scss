@@ -100,6 +100,7 @@
   justify-content: center;
   align-items: flex-end;
   transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .speech-bubble-container mat-icon,
@@ -111,6 +112,11 @@ i {
   position: relative;
   top: 10px;
   display: inline;
+}
+
+.speech-bubble-container .show-right{
+  width: 100%;
+  text-align: -webkit-right;
 }
 
 .speech-bubble {

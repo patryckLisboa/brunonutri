@@ -9,7 +9,7 @@
   <p class="inf">Clique nas opções que deseja para contratar seu plano</p>
 </div>
 <div class="plans">
-  <div class="plan-container hidden" *ngFor="let plan of plans" >
+  <div class="plan-container hidden" *ngFor="let plan of plans">
     <div class="title-plan">
       <h1>{{ plan.type }}</h1>
     </div>
@@ -30,7 +30,7 @@
         <div *ngIf="plan.selectedPlan == '1'">
           <div>
             <h1>Preço Mensal</h1>
-            <p>R$ </p>
+            <p>R$</p>
             <h2>{{ plan.normal }}</h2>
             <p>,00/Mês</p>
           </div>
@@ -38,7 +38,7 @@
         <div *ngIf="plan.selectedPlan == '2'">
           <div>
             <h1>Preço Trimestral</h1>
-            <p>R$ </p>
+            <p>R$</p>
             <h2>{{ plan.valorTrimestral }}</h2>
             <p>,00/Mês</p>
           </div>
@@ -46,18 +46,25 @@
         <div *ngIf="plan.selectedPlan == '3'">
           <div>
             <h1>Preço Semestral</h1>
-            <p>R$ </p>
+            <p>R$</p>
             <h2>{{ plan.valorSemestral }}</h2>
             <p>,00/Mês</p>
           </div>
         </div>
       </div>
       <div *ngIf="true">
-        <p>Total de R$ {{ getTotalPlan(plan) }},00</p>
+        <p>Total de R$ {{ getTotalPlan(plan) }},00 {{((plan.payment == '2') ? '+ taxa do cartão' : '')}}</p>
       </div>
-      <div>
-        <button class="button" id="navResponsivePlans" target="_blank">
-          <p>Contratar <i class="fas fa-angle-double-right"></i></p>
+      <div class="payment">
+        <mat-radio-group
+          [value]="plan.payment"
+          (change)="onChangeSelectedPayment($event, plan.id)"
+        >
+          <mat-radio-button value="1">PIX</mat-radio-button>
+          <mat-radio-button value="2">Cartão</mat-radio-button>
+        </mat-radio-group>
+        <button class="button" #button (click)="openWhatsApp(button, plan)" id="navResponsivePlans" target="_blank">
+          <p>Contratar  <i class="fas fa-angle-double-right"></i></p>
         </button>
       </div>
     </div>

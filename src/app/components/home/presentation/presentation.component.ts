@@ -35,9 +35,9 @@ export class PresentationComponent {
 
   openWhatsApp(openWhatsApp: HTMLElement) {
     this.elasticEffect(openWhatsApp);
-    const whatsAppUrl =
-      'https://api.whatsapp.com/send?phone=5562984042418&text=Olá,%20gostaria%20de%20contratar%20o%20plano%20mensal';
-
+    const mensagem = 'Olá Bruno, gostaria de contratar um dos seus planos.';
+    const whatsAppUrl = `https://api.whatsapp.com/send?phone=5562984042418&text=${encodeURIComponent(mensagem)}`;
+  
     setTimeout(() => {
       window.open(whatsAppUrl, '_blank');
     }, 500);

@@ -64,21 +64,6 @@ b {
 }
 
 
-@keyframes left-appear {
-  from {
-    opacity: 0;
-    transform: translateX(-200vw);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.left-appear {
-  animation: left-appear 1s ease-out;
-}
-
 .global-container{
   animation: initial-blur 2s ease-out;
 }

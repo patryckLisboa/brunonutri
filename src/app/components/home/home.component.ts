@@ -14,6 +14,7 @@ export class HomeComponent {
   topObserver: any = null;
   footerObserver: any = null;
   openingObserver: any = null;
+  openingRightObserver: any = null;
   stoppedScrolling = false;
   constructor(private elementRef: ElementRef) {}
 
@@ -48,6 +49,7 @@ export class HomeComponent {
     this.topObserver.disconnect();
     this.footerObserver.disconnect();
     this.openingObserver.disconnect();
+    this.openingRightObserver.disconnect();
   }
 
   activatedScroll(value = false) {
@@ -59,18 +61,32 @@ export class HomeComponent {
     this.initNavigationTop();
     this.initNavigationBottom();
     this.openingObserver = new IntersectionObserver((entries) =>
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show')
-        }else{
-          entry.target.classList.remove('show')
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      })
+    );
+    this.openingRightObserver = new IntersectionObserver((entries) =>
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show-right');
+        } else {
+          entry.target.classList.remove('show-right');
         }
       })
     );
     const elements = this.elementRef.nativeElement.querySelectorAll('.hidden');
+    const elementsRight =
+      this.elementRef.nativeElement.querySelectorAll('.hidden-right');
 
     elements.forEach((element: any) => {
       this.openingObserver.observe(element);
+    });
+    elementsRight.forEach((element: any) => {
+      this.openingRightObserver.observe(element);
     });
   }
 

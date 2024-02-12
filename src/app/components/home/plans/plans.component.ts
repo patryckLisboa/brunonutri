@@ -12,6 +12,7 @@ export class PlansComponent {
     {
       id: 0,
       selectedPlan: '1',
+      payment: '1',
       type: 'Plano Básico',
       normal: 250,
       valorTrimestral: 216,
@@ -26,6 +27,7 @@ export class PlansComponent {
     {
       id: 1,
       selectedPlan: '1',
+      payment: '1',
       type: 'Plano Plus',
       normal: 350,
       valorTrimestral: 316,
@@ -41,6 +43,7 @@ export class PlansComponent {
     {
       id: 2,
       selectedPlan: '1',
+      payment: '1',
       type: 'Plano Premium',
       normal: 450,
       valorTrimestral: 416,
@@ -60,6 +63,10 @@ export class PlansComponent {
     this.plans[planId].selectedPlan = event.value;
   }
 
+  onChangeSelectedPayment(event: MatRadioChange, planId: number) {
+    this.plans[planId].payment = event.value;
+  }
+
   getTotalPlan(plan: any){
     if(plan.selectedPlan == '2'){
       return plan.valorTrimestral * 3
@@ -69,4 +76,37 @@ export class PlansComponent {
     }
     return plan.normal
   }
+
+  
+  openWhatsApp(openWhatsApp: HTMLElement, plan: any) {
+    this.elasticEffect(openWhatsApp);
+
+    let planoContratado = ''
+    switch (plan.selectedPlan) {
+      case '1':
+        planoContratado = `mensal no valor de R$${plan.normal},00`
+        break;
+      case '2':
+        planoContratado = `trimestral no valor de R$${plan.valorTrimestral},00/Mês (Total R$${plan.valorTrimestral * 3},00)`
+        break;
+      case '3':
+        planoContratado = `semestral no valor de R$${plan.valorSemestral},00/Mês (Total R$${plan.valorSemestral * 6},00)`
+        break;
+    }
+    
+    const mensagem = `Olá Bruno, gostaria de contratar o seu ${plan.type} ${planoContratado}. Pagamento no ${plan.payment == 1 ? 'PIX' : 'Cartão'}.`;
+    const whatsAppUrl = `https://api.whatsapp.com/send?phone=5562984042418&text=${encodeURIComponent(mensagem)}`;
+  
+    setTimeout(() => {
+      window.open(whatsAppUrl, '_blank');
+    }, 500);
+  }
+
+  elasticEffect(element: HTMLElement) {
+    element.classList.add('clicked-elastic');
+    setTimeout(() => {
+      element.classList.remove('clicked-elastic');
+    }, 1000);
+  }
+
 }
