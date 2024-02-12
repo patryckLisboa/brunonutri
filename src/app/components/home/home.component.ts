@@ -19,9 +19,7 @@ export class HomeComponent {
 
   @HostListener('window:resize')
   onResize() {
-    const isMobile = window.innerHeight < 750;
-    !isMobile ? this.disconnectObservers(true) : this.initHiddenAnimations();
-    this.isMobile = isMobile;
+    this.isMobile = window.innerHeight < 750;
   }
 
   ngAfterViewInit() {
@@ -41,11 +39,11 @@ export class HomeComponent {
     if (onlyHiddens) {
       if (this.openingObserver) {
         this.openingObserver.disconnect();
-        this.openingObserver = null
+        this.openingObserver = null;
       }
       if (this.openingRightObserver) {
         this.openingRightObserver.disconnect();
-        this.openingRightObserver = null
+        this.openingRightObserver = null;
       }
       return;
     }
@@ -70,36 +68,32 @@ export class HomeComponent {
     this.initNavigationOptions();
     this.initNavigationTop();
     this.initNavigationBottom();
-    if (this.isMobile) this.initHiddenAnimations();
+    this.initHiddenAnimations();
   }
 
   initHiddenAnimations() {
-    this.openingObserver = new IntersectionObserver((entries) =>
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (!entry.target.classList.contains('show')) {
+    this.openingObserver = new IntersectionObserver(
+      (entries) => {
+        console.log(entries);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
             entry.target.classList.add('show');
-          }
-        } else {
-          if (entry.target.classList.contains('show')) {
+          } else {
             entry.target.classList.remove('show');
           }
-        }
-      })
+        });
+      },
+      { threshold: [0, 1] }
     );
-    this.openingRightObserver = new IntersectionObserver((entries) =>
+    this.openingRightObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          if (!entry.target.classList.contains('show-right')) {
-            entry.target.classList.add('show-right');
-          }
+          entry.target.classList.add('show-right');
         } else {
-          if (entry.target.classList.contains('show-right')) {
-            entry.target.classList.remove('show-right');
-          }
+          entry.target.classList.remove('show-right');
         }
-      })
-    );
+      });
+    });
     const elements = this.elementRef.nativeElement.querySelectorAll('.hidden');
     const elementsRight =
       this.elementRef.nativeElement.querySelectorAll('.hidden-right');

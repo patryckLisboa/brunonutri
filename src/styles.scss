@@ -87,7 +87,7 @@ body {
 @keyframes left-appear {
   from {
     opacity: 0;
-    transform: translateX(-70vw);
+    transform: translateX(-30vw);
   }
   to {
     opacity: 1;
@@ -102,7 +102,7 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateX(-70vw);
+    transform: translateX(-50vw);
   }
 }
 
@@ -117,7 +117,7 @@ body {
 @keyframes right-appear {
   from {
     opacity: 0;
-    transform: translateX(70vw);
+    transform: translateX(30vw);
   }
   to {
     opacity: 1;
@@ -132,6 +132,6 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateX(70vw);
+    transform: translateX(50vw);
   }
 }

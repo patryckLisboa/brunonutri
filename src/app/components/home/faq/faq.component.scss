@@ -7,15 +7,15 @@
   background-color: black;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-.faq-container{
+.faq-container {
   height: 700px;
   padding: 10px;
   display: flex;
   align-items: center;
 }
-
 
 .green-center-line {
   width: 1px;
@@ -57,7 +57,7 @@ i {
   font-size: 20px;
 }
 
-.line-of-icons .content{
+.line-of-icons .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,12 +83,12 @@ i {
   justify-content: center;
 }
 
-.bottom{
+.bottom {
   display: none;
   height: 0%;
 }
 
-.bottom-green-line{
+.bottom-green-line {
   display: none;
 }
 
@@ -96,18 +96,17 @@ i {
   .left {
     display: none;
   }
-  .bottom{
+  .bottom {
     height: 100%;
     display: block;
   }
 
-  .bottom-green-line{
+  .bottom-green-line {
     display: block;
   }
 
-  .faq-container{
+  .faq-container {
     overflow: hidden;
     height: 1150px;
   }
-  
 }

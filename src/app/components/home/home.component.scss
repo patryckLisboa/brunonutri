@@ -7,6 +7,8 @@
 
 .navigation-footer-fixed {
   opacity: 0;
+  pointer-events: none;
+  transform: translateY(-150px);
 }
 
 * {
