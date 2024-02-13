@@ -130,7 +130,7 @@ export class HomeComponent {
           this.navigationClass = 'navigation navigation-transition';
           setTimeout(() => {
             this.navigationClass = 'navigation appear';
-          }, 300);
+          });
         }
       });
     });
