@@ -100,16 +100,19 @@ export class HomeComponent {
     });
   }
 
+  topIntersect = false;
   initNavigationBottom() {
     const elementFooter =
       this.elementRef.nativeElement.querySelector('#footerId');
     this.footerObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const newClass = entry.isIntersecting
-          ? 'navigation appear navigation-footer-transition'
-          : 'navigation appear';
-        if (this.navigationClass !== newClass) {
-          this.navigationClass = newClass;
+        if (entry.isIntersecting) {
+          this.navigationClass =
+            'navigation appear navigation-footer-transition';
+        } else {
+          this.navigationClass = this.topIntersect
+            ? 'navigation'
+            : 'navigation appear';
         }
       });
     });
@@ -122,6 +125,7 @@ export class HomeComponent {
     this.topObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         this.navigationClass = 'navigation';
+        this.topIntersect = entry.isIntersecting;
         if (!entry.isIntersecting) {
           this.navigationClass = 'navigation navigation-transition';
           setTimeout(() => {
