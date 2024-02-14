@@ -1,3 +1,10 @@
+.background-panel{
+  z-index: -2;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 .background-container {
   position: absolute;
   left: 50%;
@@ -91,16 +98,16 @@
 }
 
 .one {
-  right: 6%;
+  right: 16%;
 }
 .two {
-  right: 12%;
+  right: 22%;
 }
 .three {
-  right: 23%;
+  right: 33%;
 }
 .four {
-  right: 40%;
+  right: 50%;
 }
 
 .speech-bubble-container {
@@ -258,6 +265,18 @@ i {
   }
   .protocol {
     height: 1480px !important;
+  }
+  .one {
+    right: 6%;
+  }
+  .two {
+    right: 12%;
+  }
+  .three {
+    right: 23%;
+  }
+  .four {
+    right: 40%;
   }
 }
 
