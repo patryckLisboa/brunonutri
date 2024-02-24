@@ -16,12 +16,17 @@
     <div class="green-center-line"></div>
     <div class="plan">
       <mat-radio-group
+        *ngIf="plan.valorTrimestral || plan.valorSemestral"
         [value]="plan.selectedPlan"
         (change)="onChangeSelectedPlan($event, plan.id)"
       >
         <mat-radio-button value="1">Mensal</mat-radio-button>
-        <mat-radio-button value="2">Trimes.</mat-radio-button>
-        <mat-radio-button value="3">Semes.</mat-radio-button>
+        <mat-radio-button value="2" *ngIf="plan.valorTrimestral"
+          >Trimes.</mat-radio-button
+        >
+        <mat-radio-button value="3" *ngIf="plan.valorSemestral"
+          >Semes.</mat-radio-button
+        >
       </mat-radio-group>
       <div>
         <p [innerHTML]="plan.describe"></p>
@@ -51,9 +56,20 @@
             <p>,00/Mês</p>
           </div>
         </div>
+        <div *ngIf="!plan.selectedPlan">
+          <div>
+            <h1>Preço Consulta Presencial</h1>
+            <p>R$</p>
+            <h2>{{ plan.normal }}</h2>
+            <p>,00/Mês</p>
+          </div>
+        </div>
       </div>
-      <div *ngIf="true">
-        <p>Total de R$ {{ getTotalPlan(plan) }},00 {{((plan.payment == '2') ? '+ taxa do cartão' : '')}}</p>
+      <div>
+        <p>
+          Total de R$ {{ getTotalPlan(plan) }},00
+          {{ plan.payment == "2" ? "+ taxa do cartão" : "" }}
+        </p>
       </div>
       <div class="payment">
         <mat-radio-group
@@ -63,8 +79,14 @@
           <mat-radio-button value="1">PIX</mat-radio-button>
           <mat-radio-button value="2">Cartão</mat-radio-button>
         </mat-radio-group>
-        <button class="button" #button (click)="openWhatsApp(button, plan)" id="navResponsivePlans" target="_blank">
-          <p>Contratar  <i class="fas fa-angle-double-right"></i></p>
+        <button
+          class="button"
+          #button
+          (click)="openWhatsApp(button, plan)"
+          id="navResponsivePlans"
+          target="_blank"
+        >
+          <p>Contratar <i class="fas fa-angle-double-right"></i></p>
         </button>
       </div>
     </div>

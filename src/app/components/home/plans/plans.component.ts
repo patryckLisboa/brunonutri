@@ -36,8 +36,8 @@ export class PlansComponent {
       <li>Dieta individualizada</li>
       <li>Avaliação do físico para traçar objetivos</li>
       <li>Suplementação Personalizada</li>
-      <li>Treino individualizado e personalizado</li>
       <li>Suporte 24 horas via WhatsApp</li>
+      <li>Treino individualizado e personalizado</li>
       </ul>`,
     },
     {
@@ -52,9 +52,25 @@ export class PlansComponent {
       <li>Dieta individualizada</li>
       <li>Avaliação do físico para traçar objetivos</li>
       <li>Suplementação Personalizada</li>
+      <li>Suporte 24 horas via WhatsApp</li>
       <li>Treino individualizado e personalizado</li>
       <li>Elaboração de protocolo de recursos ergogênicos </li>
-      <li>Suporte 24 horas via WhatsApp</li>
+      </ul>`,
+    },
+    {
+      id: 3,
+      selectedPlan: null,
+      payment: '1',
+      type: 'Consulta Presencial',
+      normal: 300,
+      valorTrimestral: 0,
+      valorSemestral: 0,
+      describe: `<ul>
+      <li>Dieta individualizada</li>
+      <li>Avaliação do físico para traçar objetivos</li>
+      <li>Suplementação Personalizada</li>
+      <li>Suporte 24 horas via WhatsApp válido por 30 dias após a consulta</li>
+      <li>Consulta única (Sem Retorno Presencial)</li>
       </ul>`,
     },
   ];
@@ -67,36 +83,47 @@ export class PlansComponent {
     this.plans[planId].payment = event.value;
   }
 
-  getTotalPlan(plan: any){
-    if(plan.selectedPlan == '2'){
-      return plan.valorTrimestral * 3
+  getTotalPlan(plan: any) {
+    if (plan.selectedPlan == '2') {
+      return plan.valorTrimestral * 3;
     }
-    if(plan.selectedPlan == '3'){
-      return plan.valorSemestral * 6
+    if (plan.selectedPlan == '3') {
+      return plan.valorSemestral * 6;
     }
-    return plan.normal
+    return plan.normal;
   }
 
-  
   openWhatsApp(openWhatsApp: HTMLElement, plan: any) {
     this.elasticEffect(openWhatsApp);
 
-    let planoContratado = ''
+    let planoContratado = '';
     switch (plan.selectedPlan) {
       case '1':
-        planoContratado = `mensal no valor de R$${plan.normal},00`
+        planoContratado = `mensal no valor de R$${plan.normal},00`;
         break;
       case '2':
-        planoContratado = `trimestral no valor de R$${plan.valorTrimestral},00/Mês (Total R$${plan.valorTrimestral * 3},00)`
+        planoContratado = `trimestral no valor de R$${
+          plan.valorTrimestral
+        },00/Mês (Total R$${plan.valorTrimestral * 3},00)`;
         break;
       case '3':
-        planoContratado = `semestral no valor de R$${plan.valorSemestral},00/Mês (Total R$${plan.valorSemestral * 6},00)`
+        planoContratado = `semestral no valor de R$${
+          plan.valorSemestral
+        },00/Mês (Total R$${plan.valorSemestral * 6},00)`;
         break;
+      default:
+        planoContratado = `no valor de R$${plan.normal},00`;
     }
-    
-    const mensagem = `Olá Bruno, gostaria de contratar o seu ${plan.type} ${planoContratado}. Pagamento no ${plan.payment == 1 ? 'PIX' : 'Cartão'}.`;
-    const whatsAppUrl = `https://api.whatsapp.com/send?phone=5562984042418&text=${encodeURIComponent(mensagem)}`;
-  
+
+    const mensagem = `Olá Bruno, gostaria de contratar a sua ${
+      plan.type
+    } ${planoContratado}. Pagamento no ${
+      plan.payment == 1 ? 'PIX' : 'Cartão + taxa do cartão'
+    }.`;
+    const whatsAppUrl = `https://api.whatsapp.com/send?phone=5562984042418&text=${encodeURIComponent(
+      mensagem
+    )}`;
+
     setTimeout(() => {
       window.open(whatsAppUrl, '_blank');
     }, 500);
@@ -108,5 +135,4 @@ export class PlansComponent {
       element.classList.remove('clicked-elastic');
     }, 1000);
   }
-
 }
