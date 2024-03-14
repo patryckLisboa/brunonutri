@@ -114,8 +114,8 @@ export class PlansComponent {
       default:
         planoContratado = `no valor de R$${plan.normal},00`;
     }
-
-    const mensagem = `Olá Bruno, gostaria de contratar a sua ${
+    const textForGender = plan.id == 3 ? 'a sua ' : 'o seu '
+    const mensagem = `Olá Bruno, gostaria de contratar ${textForGender}${
       plan.type
     } ${planoContratado}. Pagamento no ${
       plan.payment == 1 ? 'PIX' : 'Cartão + taxa do cartão'
