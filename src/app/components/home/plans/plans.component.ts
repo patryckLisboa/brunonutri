@@ -61,11 +61,12 @@ export class PlansComponent {
       id: 3,
       selectedPlan: null,
       payment: '1',
-      type: 'Consulta Presencial',
-      normal: 300,
+      type: 'Consulta Presencial (Home Care)',
+      normal: 'A COMBINAR',
       valorTrimestral: 0,
       valorSemestral: 0,
       describe: `<ul>
+      <li>O valor irá depender da cidade e horário da consulta</li>
       <li>Dieta individualizada</li>
       <li>Avaliação do físico para traçar objetivos</li>
       <li>Suplementação Personalizada</li>
@@ -106,13 +107,13 @@ export class PlansComponent {
           plan.valorTrimestral
         },00/Mês (Total R$${plan.valorTrimestral * 3},00)`;
         break;
-      case '3':
+      case '3': 
         planoContratado = `semestral no valor de R$${
           plan.valorSemestral
         },00/Mês (Total R$${plan.valorSemestral * 6},00)`;
         break;
       default:
-        planoContratado = `no valor de R$${plan.normal},00`;
+        planoContratado = `no valor ${plan.normal}`;
     }
     const textForGender = plan.id == 3 ? 'a sua ' : 'o seu '
     const mensagem = `Olá Bruno, gostaria de contratar ${textForGender}${

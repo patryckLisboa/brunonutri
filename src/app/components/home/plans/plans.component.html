@@ -59,17 +59,9 @@
         <div *ngIf="!plan.selectedPlan">
           <div>
             <h1>Preço Consulta Presencial</h1>
-            <p>R$</p>
-            <h2>{{ plan.normal }}</h2>
-            <p>,00/Mês</p>
+            <h2>({{ plan.normal }})</h2>
           </div>
         </div>
-      </div>
-      <div>
-        <p>
-          Total de R$ {{ getTotalPlan(plan) }},00
-          {{ plan.payment == "2" ? "+ taxa do cartão" : "" }}
-        </p>
       </div>
       <div class="payment">
         <mat-radio-group
