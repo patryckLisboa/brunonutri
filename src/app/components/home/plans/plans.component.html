@@ -63,6 +63,12 @@
           </div>
         </div>
       </div>
+      <div *ngIf="plan.selectedPlan">
+        <p>
+          Total de R$ {{ getTotalPlan(plan) }},00
+          {{ plan.payment == "2" ? "+ taxa do cartão" : "" }}
+        </p>
+      </div>
       <div class="payment">
         <mat-radio-group
           [value]="plan.payment"
